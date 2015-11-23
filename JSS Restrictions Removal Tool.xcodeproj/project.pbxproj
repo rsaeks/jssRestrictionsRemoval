@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		047D7CE11C03743E00EF7872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047D7CE41C03743E00EF7872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		047D7CE61C03743E00EF7872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04BA0FC11C038821001AEE83 /* JSS Restrictions Removal Tool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "JSS Restrictions Removal Tool.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		047D7CD91C03743E00EF7872 /* JSS Restrictions Removal Tool */ = {
 			isa = PBXGroup;
 			children = (
+				04BA0FC11C038821001AEE83 /* JSS Restrictions Removal Tool.entitlements */,
 				047D7CDA1C03743E00EF7872 /* AppDelegate.swift */,
 				047D7CDC1C03743E00EF7872 /* ViewController.swift */,
 				047D7CE11C03743E00EF7872 /* Assets.xcassets */,
@@ -96,11 +98,17 @@
 				TargetAttributes = {
 					047D7CD61C03743E00EF7872 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = L3CMP2L959;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = 047D7CD21C03743E00EF7872 /* Build configuration list for PBXProject "JSS Restrictions Removal Tool" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -238,9 +246,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JSS Restrictions Removal Tool/JSS Restrictions Removal Tool.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rsaeks.JSS-Restrictions-Removal-Tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -250,9 +262,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JSS Restrictions Removal Tool/JSS Restrictions Removal Tool.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rsaeks.JSS-Restrictions-Removal-Tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -277,6 +292,7 @@
 				047D7CEB1C03743E00EF7872 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
