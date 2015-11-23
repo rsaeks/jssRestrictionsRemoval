@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047D7CDB1C03743E00EF7872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D7CDA1C03743E00EF7872 /* AppDelegate.swift */; };
+		047D7CDD1C03743E00EF7872 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D7CDC1C03743E00EF7872 /* ViewController.swift */; };
+		047D7CE01C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 047D7CDE1C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld */; };
+		047D7CE21C03743E00EF7872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D7CE11C03743E00EF7872 /* Assets.xcassets */; };
+		047D7CE51C03743E00EF7872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047D7CE31C03743E00EF7872 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		047D7CD71C03743E00EF7872 /* JSS Restrictions Removal Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSS Restrictions Removal Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		047D7CDA1C03743E00EF7872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		047D7CDC1C03743E00EF7872 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		047D7CDF1C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JSS_Restrictions_Removal_Tool.xcdatamodel; sourceTree = "<group>"; };
+		047D7CE11C03743E00EF7872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		047D7CE41C03743E00EF7872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		047D7CE61C03743E00EF7872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		047D7CD41C03743E00EF7872 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047D7CCE1C03743E00EF7872 = {
+			isa = PBXGroup;
+			children = (
+				047D7CD91C03743E00EF7872 /* JSS Restrictions Removal Tool */,
+				047D7CD81C03743E00EF7872 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		047D7CD81C03743E00EF7872 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				047D7CD71C03743E00EF7872 /* JSS Restrictions Removal Tool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		047D7CD91C03743E00EF7872 /* JSS Restrictions Removal Tool */ = {
+			isa = PBXGroup;
+			children = (
+				047D7CDA1C03743E00EF7872 /* AppDelegate.swift */,
+				047D7CDC1C03743E00EF7872 /* ViewController.swift */,
+				047D7CE11C03743E00EF7872 /* Assets.xcassets */,
+				047D7CE31C03743E00EF7872 /* Main.storyboard */,
+				047D7CE61C03743E00EF7872 /* Info.plist */,
+				047D7CDE1C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld */,
+			);
+			path = "JSS Restrictions Removal Tool";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		047D7CD61C03743E00EF7872 /* JSS Restrictions Removal Tool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047D7CE91C03743E00EF7872 /* Build configuration list for PBXNativeTarget "JSS Restrictions Removal Tool" */;
+			buildPhases = (
+				047D7CD31C03743E00EF7872 /* Sources */,
+				047D7CD41C03743E00EF7872 /* Frameworks */,
+				047D7CD51C03743E00EF7872 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JSS Restrictions Removal Tool";
+			productName = "JSS Restrictions Removal Tool";
+			productReference = 047D7CD71C03743E00EF7872 /* JSS Restrictions Removal Tool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		047D7CCF1C03743E00EF7872 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Randy Saeks";
+				TargetAttributes = {
+					047D7CD61C03743E00EF7872 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 047D7CD21C03743E00EF7872 /* Build configuration list for PBXProject "JSS Restrictions Removal Tool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 047D7CCE1C03743E00EF7872;
+			productRefGroup = 047D7CD81C03743E00EF7872 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				047D7CD61C03743E00EF7872 /* JSS Restrictions Removal Tool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		047D7CD51C03743E00EF7872 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047D7CE21C03743E00EF7872 /* Assets.xcassets in Resources */,
+				047D7CE51C03743E00EF7872 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		047D7CD31C03743E00EF7872 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047D7CDD1C03743E00EF7872 /* ViewController.swift in Sources */,
+				047D7CDB1C03743E00EF7872 /* AppDelegate.swift in Sources */,
+				047D7CE01C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		047D7CE31C03743E00EF7872 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				047D7CE41C03743E00EF7872 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		047D7CE71C03743E00EF7872 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		047D7CE81C03743E00EF7872 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		047D7CEA1C03743E00EF7872 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsaeks.JSS-Restrictions-Removal-Tool";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		047D7CEB1C03743E00EF7872 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsaeks.JSS-Restrictions-Removal-Tool";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		047D7CD21C03743E00EF7872 /* Build configuration list for PBXProject "JSS Restrictions Removal Tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047D7CE71C03743E00EF7872 /* Debug */,
+				047D7CE81C03743E00EF7872 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047D7CE91C03743E00EF7872 /* Build configuration list for PBXNativeTarget "JSS Restrictions Removal Tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047D7CEA1C03743E00EF7872 /* Debug */,
+				047D7CEB1C03743E00EF7872 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		047D7CDE1C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				047D7CDF1C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodel */,
+			);
+			currentVersion = 047D7CDF1C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodel */;
+			path = JSS_Restrictions_Removal_Tool.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 047D7CCF1C03743E00EF7872 /* Project object */;
+}
