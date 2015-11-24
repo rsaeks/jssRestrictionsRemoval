@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C2D3BA35BC3D6D55F5D20F7D7F5A64364C1D25C4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C2D3BA35BC3D6D55F5D20F7D7F5A64364C1D25C4" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A9B1947A-3D76-476A-B1EE-DEDF7C60F821",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C2D3BA35BC3D6D55F5D20F7D7F5A64364C1D25C4" : "jssRestrictionsRemoval\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "jssRestrictionsRemoval\/Alamofire\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "JSS Restrictions Removal Tool",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "JSS Restrictions Removal Tool.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rsaeks\/jssRestrictionsRemoval.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C2D3BA35BC3D6D55F5D20F7D7F5A64364C1D25C4"
+    }
+  ]
+}
