@@ -644,17 +644,17 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="JSS_Restrictions_Removal_Tool" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="31.5" y="-65"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="JSS Restriction Removal Tool" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" unifiedTitleAndToolbar="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="640" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="640" height="480"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -672,23 +672,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-hc-n3Y">
-                                <rect key="frame" x="131" y="443" width="379" height="23"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-hc-n3Y">
+                                <rect key="frame" x="130" y="442" width="379" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="JSS Restriction Removal Tool" id="eAe-4f-R9T">
                                     <font key="font" metaFont="systemBold" size="18"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Li-ipm">
-                                <rect key="frame" x="18" y="275" width="601" height="153"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Li-ipm">
+                                <rect key="frame" x="19" y="275" width="601" height="153"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="TbH-8P-Ywz">
                                     <font key="font" metaFont="system"/>
-                                    <mutableString key="title">To use the JSS Restriction Removal too, enter in your JSS URL below and click the "Check" button to check JSS connectivity. If you see a green indicator you are ready to proceede.
+                                    <string key="title">To use the JSS Restriction Removal too, enter in your JSS URL below and click the "Check" button to check JSS connectivity. If you see a green indicator you are ready to proceede.
 
 The Exception Group ID # should be a static mobile device group that is scoped as an exclusion to the settings you would like to remove. This is typically a config profile. You will need to use the numerical group ID, not the group name.
 
-Finally, enter in your JSS username / password and the device serial number. When you are ready, click one of the two buttons to either remove or re-apply restrictions.</mutableString>
+Finally, enter in your JSS username / password and the device serial number. When you are ready, click one of the two buttons to either remove or re-apply restrictions.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -796,16 +796,6 @@ Finally, enter in your JSS username / password and the device serial number. Whe
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swq-Cj-CNS">
-                                <rect key="frame" x="485" y="214" width="58" height="32"/>
-                                <buttonCell key="cell" type="push" title="Check" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1bd-6s-tRD">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system" size="10"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="checkJSSURL:" target="XfG-lQ-9wD" id="hTw-Dk-Srz"/>
-                                </connections>
-                            </button>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5L-gj-PCd">
                                 <rect key="frame" x="549" y="220" width="19" height="22"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="ceK-Xx-7a1"/>
@@ -818,11 +808,41 @@ Finally, enter in your JSS username / password and the device serial number. Whe
                                 <rect key="frame" x="547" y="220" width="24" height="21"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="hSw-zE-6LP"/>
                             </imageView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swq-Cj-CNS">
+                                <rect key="frame" x="490" y="222" width="52" height="16"/>
+                                <buttonCell key="cell" type="push" title="Check" bezelStyle="rounded" imagePosition="overlaps" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1bd-6s-tRD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="miniSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="checkJSSURL:" target="XfG-lQ-9wD" id="hTw-Dk-Srz"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E65-RO-0pF">
+                                <rect key="frame" x="119" y="0.0" width="23" height="30"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusNone" id="n7L-LA-GIS"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byt-vn-e4K">
+                                <rect key="frame" x="471" y="-9" width="48" height="48"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusNone" id="ESG-H7-VxR"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hB0-M0-Pm0">
+                                <rect key="frame" x="107" y="-9" width="48" height="48"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="1j3-Mc-mqW"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaq-z2-Zct">
+                                <rect key="frame" x="471" y="-9" width="48" height="48"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="H25-PH-bSF"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COo-V8-1Xh">
+                                <rect key="frame" x="107" y="-9" width="48" height="48"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="O9d-xY-68Z"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hY-3M-7kL">
+                                <rect key="frame" x="471" y="-9" width="48" height="48"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="p1M-cw-Knd"/>
+                            </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="TiO-hc-n3Y" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Cbm-uR-hrZ"/>
-                            <constraint firstItem="cc7-Li-ipm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fLD-0o-kMK"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="deviceSN" destination="fvG-EH-e3i" id="oRe-pK-N68"/>
@@ -833,11 +853,17 @@ Finally, enter in your JSS username / password and the device serial number. Whe
                         <outlet property="jssPassword" destination="eMQ-Vc-cLw" id="oxZ-mA-ink"/>
                         <outlet property="jssURL" destination="h5A-OU-TTB" id="dkA-qT-FR3"/>
                         <outlet property="jssUsername" destination="zx8-nF-O9T" id="SF0-NA-2lS"/>
+                        <outlet property="reapplyFail" destination="9hY-3M-7kL" id="FJr-o1-jI1"/>
+                        <outlet property="reapplySuccess" destination="eaq-z2-Zct" id="CFt-1C-tG0"/>
+                        <outlet property="reapplyUnknown" destination="Byt-vn-e4K" id="IQF-Eb-g8f"/>
+                        <outlet property="removeFail" destination="COo-V8-1Xh" id="Sr3-X2-V5J"/>
+                        <outlet property="removeSuccess" destination="hB0-M0-Pm0" id="4Lo-pw-Kcz"/>
+                        <outlet property="removeUnknown" destination="E65-RO-0pF" id="v8F-ho-J5U"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="754"/>
+            <point key="canvasLocation" x="86" y="827"/>
         </scene>
     </scenes>
     <resources>
