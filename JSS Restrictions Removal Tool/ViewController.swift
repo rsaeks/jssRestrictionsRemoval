@@ -22,6 +22,10 @@ class ViewController: NSViewController {
     }
     // Create Connection to JSS URL from Text Box
     @IBOutlet weak var jssURL: NSTextField!
+    @IBOutlet weak var exclusionGID: NSTextField!
+    @IBOutlet weak var jssUsername: NSTextField!
+    @IBOutlet weak var jssPassword: NSSecureTextField!
+    @IBOutlet weak var deviceSN: NSTextField!
     
     //Initialize Connection to JSS Status indicator gems
     @IBOutlet weak var jssConnectYes: NSImageView!
@@ -58,6 +62,29 @@ class ViewController: NSViewController {
         }
         
     }
+    
+    @IBAction func removeRestrictions(sender: AnyObject) {
+        //DEBUG: Print where we are
+        print("Remove Restrictions Code")
+        print(jssURL.stringValue)
+        print(exclusionGID.integerValue)
+        print(jssUsername.stringValue)
+        print(jssPassword.stringValue)
+        print(deviceSN.stringValue)
+    }
+    
+    @IBAction func reapplyRestrictions(sender: AnyObject) {
+        //DEBUG: Print where we are
+        print("Reapply Restrictions Code")
+        print(jssURL.stringValue)
+        print(exclusionGID.integerValue)
+        print(jssUsername.stringValue)
+        print(jssPassword.stringValue)
+        print(deviceSN.stringValue)
+    }
+    
+    
+    
 
     override var representedObject: AnyObject? {
         didSet {

@@ -669,19 +669,52 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="JSS_Restrictions_Removal_Tool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-hc-n3Y">
-                                <rect key="frame" x="51" y="317" width="379" height="23"/>
+                                <rect key="frame" x="131" y="443" width="379" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="JSS Restriction Removal Tool" id="eAe-4f-R9T">
                                     <font key="font" metaFont="systemBold" size="18"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Li-ipm">
+                                <rect key="frame" x="18" y="275" width="601" height="153"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="TbH-8P-Ywz">
+                                    <font key="font" metaFont="system"/>
+                                    <mutableString key="title">To use the JSS Restriction Removal too, enter in your JSS URL below and click the "Check" button to check JSS connectivity. If you see a green indicator you are ready to proceede.
+
+The Exception Group ID # should be a static mobile device group that is scoped as an exclusion to the settings you would like to remove. This is typically a config profile. You will need to use the numerical group ID, not the group name.
+
+Finally, enter in your JSS username / password and the device serial number. When you are ready, click one of the two buttons to either remove or re-apply restrictions.</mutableString>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nr0-ma-Ppw">
+                                <rect key="frame" x="49" y="23" width="164" height="32"/>
+                                <buttonCell key="cell" type="push" title="Remove Restrictions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uYC-Qr-v9L">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="removeRestrictions:" target="XfG-lQ-9wD" id="jmc-fP-cPJ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJR-6T-3Tu">
+                                <rect key="frame" x="409" y="23" width="172" height="32"/>
+                                <buttonCell key="cell" type="push" title="Re-Apply Restrictions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="axesIndependently" inset="2" id="Mmc-Ut-76a">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="reapplyRestrictions:" target="XfG-lQ-9wD" id="6bB-oH-rEm"/>
+                                </connections>
+                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-S0-ZrV">
-                                <rect key="frame" x="18" y="250" width="57" height="17"/>
+                                <rect key="frame" x="53" y="223" width="57" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="JSS URL" id="1j8-E7-ZXz">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -689,7 +722,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5A-OU-TTB">
-                                <rect key="frame" x="174" y="247" width="267" height="22"/>
+                                <rect key="frame" x="209" y="220" width="267" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="https://mdm.yourcompany.org:8443" drawsBackground="YES" id="7AG-lf-ALA">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -697,7 +730,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSa-lJ-l2h">
-                                <rect key="frame" x="174" y="215" width="96" height="22"/>
+                                <rect key="frame" x="209" y="188" width="96" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="G5N-oC-ar1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -705,7 +738,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KkP-LI-hd1">
-                                <rect key="frame" x="18" y="214" width="133" height="17"/>
+                                <rect key="frame" x="53" y="187" width="133" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Exception Group ID #" id="f4S-ZI-w6W">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -713,7 +746,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8px-8i-C3a">
-                                <rect key="frame" x="18" y="182" width="93" height="17"/>
+                                <rect key="frame" x="53" y="155" width="93" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="JSS Username" id="vhL-nq-vDn">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -721,7 +754,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zx8-nF-O9T">
-                                <rect key="frame" x="174" y="182" width="96" height="22"/>
+                                <rect key="frame" x="209" y="155" width="96" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="username" drawsBackground="YES" id="IxB-ny-nUx">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -729,7 +762,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufO-F7-wUa">
-                                <rect key="frame" x="19" y="150" width="90" height="17"/>
+                                <rect key="frame" x="54" y="123" width="90" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="JSS Password" id="0Gj-ZM-6Ad">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -737,7 +770,7 @@
                                 </textFieldCell>
                             </textField>
                             <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMQ-Vc-cLw">
-                                <rect key="frame" x="174" y="150" width="96" height="22"/>
+                                <rect key="frame" x="209" y="123" width="96" height="22"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="oKT-yp-fX1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -747,22 +780,8 @@
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
                             </secureTextField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nr0-ma-Ppw">
-                                <rect key="frame" x="15" y="44" width="164" height="32"/>
-                                <buttonCell key="cell" type="push" title="Remove Restrictions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uYC-Qr-v9L">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJR-6T-3Tu">
-                                <rect key="frame" x="275" y="44" width="172" height="32"/>
-                                <buttonCell key="cell" type="push" title="Re-Apply Restrictions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mmc-Ut-76a">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5A-ld-HSn">
-                                <rect key="frame" x="18" y="110" width="135" height="17"/>
+                                <rect key="frame" x="53" y="91" width="135" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Device Serial Number" id="KVz-KS-Loi">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -770,7 +789,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvG-EH-e3i">
-                                <rect key="frame" x="174" y="107" width="135" height="22"/>
+                                <rect key="frame" x="209" y="91" width="135" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Serial Number" drawsBackground="YES" id="BP7-De-pxr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -778,7 +797,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swq-Cj-CNS">
-                                <rect key="frame" x="450" y="241" width="58" height="32"/>
+                                <rect key="frame" x="485" y="214" width="58" height="32"/>
                                 <buttonCell key="cell" type="push" title="Check" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1bd-6s-tRD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="10"/>
@@ -788,32 +807,37 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5L-gj-PCd">
-                                <rect key="frame" x="505" y="247" width="19" height="22"/>
+                                <rect key="frame" x="549" y="220" width="19" height="22"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="ceK-Xx-7a1"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BIP-YD-Ck3">
-                                <rect key="frame" x="505" y="247" width="22" height="22"/>
+                                <rect key="frame" x="548" y="220" width="22" height="22"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusNone" id="6FN-ka-4Su"/>
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-zs-it7">
-                                <rect key="frame" x="504" y="247" width="24" height="21"/>
+                                <rect key="frame" x="547" y="220" width="24" height="21"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="hSw-zE-6LP"/>
                             </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="TiO-hc-n3Y" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Cbm-uR-hrZ"/>
+                            <constraint firstItem="cc7-Li-ipm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fLD-0o-kMK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deviceSN" destination="fvG-EH-e3i" id="oRe-pK-N68"/>
+                        <outlet property="exclusionGID" destination="pSa-lJ-l2h" id="UEb-bh-oGD"/>
                         <outlet property="jssConnectNo" destination="u5L-gj-PCd" id="cMC-To-aUe"/>
                         <outlet property="jssConnectTBD" destination="BIP-YD-Ck3" id="Kqj-pu-CCd"/>
                         <outlet property="jssConnectYes" destination="BAv-zs-it7" id="qcg-qX-eDj"/>
+                        <outlet property="jssPassword" destination="eMQ-Vc-cLw" id="oxZ-mA-ink"/>
                         <outlet property="jssURL" destination="h5A-OU-TTB" id="dkA-qT-FR3"/>
+                        <outlet property="jssUsername" destination="zx8-nF-O9T" id="SF0-NA-2lS"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74" y="754"/>
         </scene>
     </scenes>
     <resources>
