@@ -14,6 +14,7 @@
 		047D7CE51C03743E00EF7872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047D7CE31C03743E00EF7872 /* Main.storyboard */; };
 		D5153EF31C040100002A7631 /* Just.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5153EF21C040100002A7631 /* Just.framework */; };
 		D5153EF41C040100002A7631 /* Just.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5153EF21C040100002A7631 /* Just.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D54BB3601C06D6D800C24681 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54BB35F1C06D6D800C24681 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		047D7CE61C03743E00EF7872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BA0FC11C038821001AEE83 /* JSS Restrictions Removal Tool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "JSS Restrictions Removal Tool.entitlements"; sourceTree = "<group>"; };
 		D5153EF21C040100002A7631 /* Just.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Just.framework; path = Carthage/Build/Mac/Just.framework; sourceTree = "<group>"; };
+		D54BB35F1C06D6D800C24681 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D54BB3601C06D6D800C24681 /* Cocoa.framework in Frameworks */,
 				D5153EF31C040100002A7631 /* Just.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +60,7 @@
 		047D7CCE1C03743E00EF7872 = {
 			isa = PBXGroup;
 			children = (
+				D54BB35F1C06D6D800C24681 /* Cocoa.framework */,
 				D5153EF21C040100002A7631 /* Just.framework */,
 				047D7CD91C03743E00EF7872 /* JSS Restrictions Removal Tool */,
 				047D7CD81C03743E00EF7872 /* Products */,
@@ -266,7 +270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -285,7 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
