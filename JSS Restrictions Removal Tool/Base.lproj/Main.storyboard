@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C47a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C48a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
@@ -684,11 +684,11 @@
                                 <rect key="frame" x="19" y="249" width="603" height="182"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="TbH-8P-Ywz">
                                     <font key="font" metaFont="system"/>
-                                    <mutableString key="title">This tool will allow you to quickly remove and re-apply restrictions from an iOS device for quick troubleshooting. A member of the technology team can provide you with the Casper Server Address and the Exception Group ID #.
+                                    <string key="title">This tool will allow you to quickly remove and re-apply restrictions from an iOS device for troubleshooting. A member of the technology team can provide you with the Casper Server Address and the Exception Group ID #.
 
-Click the Check Connection button to make sure the app can connect to your system. Once verified enter in the provided Group ID number and your username. Click the Save Settings button to save these settings for the future. 
+Click the Check Connection button verify connectivity to your system. Once verified enter in the provided Group ID number and your username. Click the Save Settings button to save these settings for the future. 
 
-Finally, enter in your password and the device Serial Number to troubleshoot. You may then Remove Restrictions or Re-Apply them as needed by clicking the appropriate button.</mutableString>
+Finally, enter in your password and the device Serial Number to troubleshoot. You may then Remove Restrictions or Re-Apply them as needed by clicking the appropriate button.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

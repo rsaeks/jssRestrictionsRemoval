@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import Just
+// import Just
 
 
 class ViewController: NSViewController {
@@ -148,8 +148,7 @@ class ViewController: NSViewController {
             resetStatus()
             jssConnectYes.hidden = false
             reapplyFail.hidden = false
-            reapplyUnknown.hidden = true
-            invalidGIDorSN.hidden = false
+            invalidGIDorSN.hidden = true
         }
         // Other PUT errors
         else {
