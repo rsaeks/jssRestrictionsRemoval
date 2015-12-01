@@ -104,7 +104,7 @@ class ViewController: NSViewController {
 
         }
         // Not found PUT result
-        else if (addCommandXMLStatus.statusCode == 404) {
+        else if (addCommandXMLStatus.statusCode == 404 || addCommandXMLStatus.statusCode == 409) {
             resetStatus()
             jssConnectYes.hidden = false
             removeFail.hidden = false
@@ -144,11 +144,11 @@ class ViewController: NSViewController {
             invalidPassword.hidden = false
         }
         // Not found PUT result
-        else if (removeCommandXMLStatus.statusCode == 404) {
+        else if (removeCommandXMLStatus.statusCode == 404 || removeCommandXMLStatus.statusCode == 409) {
             resetStatus()
             jssConnectYes.hidden = false
             reapplyFail.hidden = false
-            invalidGIDorSN.hidden = true
+            invalidGIDorSN.hidden = false
         }
         // Other PUT errors
         else {
