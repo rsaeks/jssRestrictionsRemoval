@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-// import Just
 
 
 class ViewController: NSViewController {
@@ -58,17 +57,16 @@ class ViewController: NSViewController {
     @IBAction func checkJSSURL(sender: NSButton) {
         
         // Get URL of site from server
-        let r = Just.get(jssURL.stringValue, timeout:5.0)
-        
-        // As long as we get data back from server set status gem to green and hide red / grey
-        if (r.url != nil ) {
+        let testConn = Just.get(jssURL.stringValue, timeout:5.0)
+
+        if (testConn.ok) {
             resetStatus()
             jssConnectTBD.hidden = true
             jssConnectYes.hidden = false
             removeEnabled.enabled = true
             reapplyEnabled.enabled = true
         }
-        // If we get back nil set status gem to red and hide green and grey
+
         else {
             resetStatus()
             jssConnectTBD.hidden = true
@@ -79,6 +77,7 @@ class ViewController: NSViewController {
         }
         
     }
+    
     // Run this function when clicking "Remove Settings"
     @IBAction func removeRestrictions(sender: AnyObject) {
         resetStatus()
@@ -160,6 +159,14 @@ class ViewController: NSViewController {
 
     }
 
+    // Run this when clicking delete device button
+    @IBAction func deleteDevice(sender: AnyObject) {
+        // TODO:    Code removal. Looks like will need to make an API call to retreive the device ID based
+        //          on SN, parse returned data and extract the device ID.
+        let removeURL=jssURL.stringValue + "/JSSResource/mobiledevices/match/" + deviceSN.stringValue
+        print(removeURL)
+    }
+    
     // Run this function when clicking "Save Settings"
     @IBAction func saveSettings(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(jssURL.stringValue, forKey: "kJSSURL")
