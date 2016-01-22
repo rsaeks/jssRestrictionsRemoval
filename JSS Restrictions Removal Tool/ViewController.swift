@@ -56,12 +56,13 @@ class ViewController: NSViewController {
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(sender: NSButton) {
         
-        // Get URL of site from server
+        // If there is a trailing slash in the JSS URL, remove.
         if (jssURL.stringValue.characters.last == "/") {
             jssURL.stringValue = jssURL.stringValue.substringToIndex(jssURL.stringValue.endIndex.predecessor())
         }
-        
+        // Test connection to JSS
         let testConn = Just.get(jssURL.stringValue, timeout:5.0)
+       
         if (testConn.statusCode != nil) {
             resetStatus()
             jssConnectTBD.hidden = true
