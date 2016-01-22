@@ -57,9 +57,12 @@ class ViewController: NSViewController {
     @IBAction func checkJSSURL(sender: NSButton) {
         
         // Get URL of site from server
+        if (jssURL.stringValue.characters.last == "/") {
+            jssURL.stringValue = jssURL.stringValue.substringToIndex(jssURL.stringValue.endIndex.predecessor())
+        }
+        
         let testConn = Just.get(jssURL.stringValue, timeout:5.0)
-
-        if (testConn.ok) {
+        if (testConn.statusCode != nil) {
             resetStatus()
             jssConnectTBD.hidden = true
             jssConnectYes.hidden = false
