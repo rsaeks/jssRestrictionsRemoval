@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
@@ -849,33 +849,33 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </connections>
                             </button>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sb2-gM-ucZ">
-                                <rect key="frame" x="358" y="140" width="244" height="21"/>
+                                <rect key="frame" x="358" y="135" width="244" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Invalid Username / password" id="WIG-11-rUM">
-                                    <font key="font" metaFont="system" size="14"/>
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wmn-3x-v8A">
-                                <rect key="frame" x="358" y="86" width="244" height="52"/>
+                                <rect key="frame" x="358" y="76" width="244" height="52"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Please Check Group ID or Device Serial Number" id="fZ8-hJ-Gmm">
-                                    <font key="font" metaFont="system" size="14"/>
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TcN-CW-0KO">
-                                <rect key="frame" x="358" y="164" width="243" height="36"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Unable to connect to JSS. Double check address and certificate trust" id="pIc-Eq-Fil">
-                                    <font key="font" metaFont="system" size="14"/>
+                                <rect key="frame" x="358" y="153" width="252" height="48"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Unable to connect to JSS. Please doublecheck address or " id="pIc-Eq-Fil">
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HaM-HD-J0g">
-                                <rect key="frame" x="358" y="71" width="244" height="27"/>
+                                <rect key="frame" x="357" y="61" width="244" height="27"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Other Error Encountered" id="S5S-BJ-He8">
-                                    <font key="font" metaFont="system" size="14"/>
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -894,9 +894,20 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                     <action selector="deleteDevice:" target="XfG-lQ-9wD" id="fUJ-2J-IOR"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xNA-Mu-KeF">
+                                <rect key="frame" x="501" y="168" width="85" height="16"/>
+                                <buttonCell key="cell" type="push" title="try in browser" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hwH-E2-gwy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="miniSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openJSSURLInBrowser:" target="XfG-lQ-9wD" id="n39-js-PVk"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="CheckURLButton" destination="xNA-Mu-KeF" id="0vi-kX-Zmk"/>
                         <outlet property="deviceSN" destination="fvG-EH-e3i" id="oRe-pK-N68"/>
                         <outlet property="exclusionGID" destination="pSa-lJ-l2h" id="UEb-bh-oGD"/>
                         <outlet property="invalidGIDorSN" destination="Wmn-3x-v8A" id="mFB-Tj-M2g"/>

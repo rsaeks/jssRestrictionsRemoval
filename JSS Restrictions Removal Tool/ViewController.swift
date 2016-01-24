@@ -52,7 +52,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var invalidPassword: NSTextField!
     @IBOutlet weak var removeEnabled: NSButton!
     @IBOutlet weak var reapplyEnabled: NSButton!
-    
+    @IBOutlet weak var CheckURLButton: NSButton!
+   
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(sender: NSButton) {
         
@@ -78,8 +79,13 @@ class ViewController: NSViewController {
             unableToConnectJSS.hidden = false
             removeEnabled.enabled = false
             reapplyEnabled.enabled = false
+            CheckURLButton.hidden = false
         }
         
+    }
+    @IBAction func openJSSURLInBrowser(sender: AnyObject) {
+        let baseURL = NSURL(string: jssURL.stringValue)
+        NSWorkspace.sharedWorkspace().openURL(baseURL!)
     }
     
     // Run this function when clicking "Remove Settings"
@@ -165,10 +171,27 @@ class ViewController: NSViewController {
 
     // Run this when clicking delete device button
     @IBAction func deleteDevice(sender: AnyObject) {
-        // TODO:    Code removal. Looks like will need to make an API call to retreive the device ID based
-        //          on SN, parse returned data and extract the device ID.
         let removeURL=jssURL.stringValue + "/JSSResource/mobiledevices/match/" + deviceSN.stringValue
-        print(removeURL)
+        let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+        // Will need to add some kind of if operation here to see if we get data back.
+        // Create status dots for deleting a device successful
+        // If we do get data back run the following:
+            var subStr = deviceData[deviceData.startIndex.advancedBy(83)...deviceData.startIndex.advancedBy(100)]
+            subStr = subStr.stringByReplacingOccurrencesOfString("<id>", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let IDNumber = subStr.componentsSeparatedByString("<")[0]
+            print (IDNumber)
+            // Also need to add in formating the HTTP request to delete the data here.
+            // Will also need to check to see if it was deleted successfully with the command and add another IF loop
+            // If the status code of the deletion is successful
+                // Set deleteSucessful.hidden = false
+            // Else (assumes the device deletion failed)
+                // Set deleteFailed.hidden = false
+        // If we do not get back data on the device, run the following
+            // resetStatus()
+            // Set deleteFailed.hidden = false
+            // jssConnectYes.hidden = false
+            // invalidGIDorSN.hidden = false
+        
     }
     
     // Run this function when clicking "Save Settings"
@@ -196,6 +219,9 @@ class ViewController: NSViewController {
         invalidPassword.hidden = true
         invalidGIDorSN.hidden = true
         otherError.hidden = true
+        CheckURLButton.hidden = true
+        // deleteFailed.hidden = true
+        // deleteSuccessful.hidden = true
         
     }
     
