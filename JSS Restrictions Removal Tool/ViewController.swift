@@ -53,7 +53,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var removeEnabled: NSButton!
     @IBOutlet weak var reapplyEnabled: NSButton!
     @IBOutlet weak var CheckURLButton: NSButton!
-   
+    @IBOutlet weak var deleteSuccess: NSImageView!
+    @IBOutlet weak var deleteFailed: NSImageView!
+    @IBOutlet weak var deleteDeviceButton: NSButton!
+
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(sender: NSButton) {
         
@@ -61,6 +64,7 @@ class ViewController: NSViewController {
         if (jssURL.stringValue.characters.last == "/") {
             jssURL.stringValue = jssURL.stringValue.substringToIndex(jssURL.stringValue.endIndex.predecessor())
         }
+        
         // Test connection to JSS
         let testConn = Just.get(jssURL.stringValue, timeout:5.0)
        
@@ -98,11 +102,12 @@ class ViewController: NSViewController {
         let addCommandXMLStatus = Just.put(builtURL, auth: (jssUsername.stringValue, jssPassword.stringValue), headers: ["Content-Type":"text/xml"], requestBody: addCommandXML.XMLData)
        
         // Successful PUT
-        if (addCommandXMLStatus.statusCode == 201)
-        {
+        if (addCommandXMLStatus.statusCode == 201) {
             resetStatus()
             jssConnectYes.hidden = false
             removeSuccess.hidden = false
+            deleteDeviceButton.enabled = true
+            
         }
         // Unauthorized PUT result
         else if (addCommandXMLStatus.statusCode == 401) {
@@ -138,8 +143,7 @@ class ViewController: NSViewController {
         let removeCommandXMLStatus = Just.put(builtURL, auth: (jssUsername.stringValue, jssPassword.stringValue), headers: ["Content-Type":"text/xml"], requestBody: removeCommandXML.XMLData)
 
         // Successful PUT
-        if (removeCommandXMLStatus.statusCode == 201)
-        {
+        if (removeCommandXMLStatus.statusCode == 201) {
             resetStatus()
             jssConnectYes.hidden = false
             reapplySuccess.hidden = false
@@ -171,27 +175,37 @@ class ViewController: NSViewController {
 
     // Run this when clicking delete device button
     @IBAction func deleteDevice(sender: AnyObject) {
+        resetStatus()
         let removeURL=jssURL.stringValue + "/JSSResource/mobiledevices/match/" + deviceSN.stringValue
         let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
-        // Will need to add some kind of if operation here to see if we get data back.
-        // Create status dots for deleting a device successful
-        // If we do get data back run the following:
+        // Check for an authentication error.
+        if (deviceData.rangeOfString("authentication") != nil) {
+            invalidPassword.hidden = false
+            deleteFailed.hidden = false
+        }
+        // Check for returned number of items being equal to 1 device.
+        else if (deviceData.rangeOfString("<size>1") != nil) {
             var subStr = deviceData[deviceData.startIndex.advancedBy(83)...deviceData.startIndex.advancedBy(100)]
             subStr = subStr.stringByReplacingOccurrencesOfString("<id>", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             let IDNumber = subStr.componentsSeparatedByString("<")[0]
-            print (IDNumber)
-            // Also need to add in formating the HTTP request to delete the data here.
-            // Will also need to check to see if it was deleted successfully with the command and add another IF loop
-            // If the status code of the deletion is successful
-                // Set deleteSucessful.hidden = false
-            // Else (assumes the device deletion failed)
-                // Set deleteFailed.hidden = false
-        // If we do not get back data on the device, run the following
-            // resetStatus()
-            // Set deleteFailed.hidden = false
-            // jssConnectYes.hidden = false
-            // invalidGIDorSN.hidden = false
-        
+            let deleteDevice = Just.delete(jssURL.stringValue + "/JSSResource/mobiledevices/id/" + IDNumber, auth: (jssUsername.stringValue, jssPassword.stringValue))
+            print (deleteDevice.statusCode)
+            // Check the response code of the delete command.
+            if (deleteDevice.ok) {
+                deleteSuccess.hidden = false
+                deleteDeviceButton.enabled = false
+            }
+            
+            else {
+                deleteFailed.hidden = false
+                otherError.hidden = false
+            }
+    }
+        //Catch all other errors getting device data.
+        else {
+            invalidGIDorSN.hidden = false
+            deleteFailed.hidden = false
+        }
     }
     
     // Run this function when clicking "Save Settings"
@@ -220,8 +234,8 @@ class ViewController: NSViewController {
         invalidGIDorSN.hidden = true
         otherError.hidden = true
         CheckURLButton.hidden = true
-        // deleteFailed.hidden = true
-        // deleteSuccessful.hidden = true
+        deleteFailed.hidden = true
+        deleteSuccess.hidden = true
         
     }
     
