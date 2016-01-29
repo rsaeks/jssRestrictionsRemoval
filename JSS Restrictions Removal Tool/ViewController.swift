@@ -56,6 +56,12 @@ class ViewController: NSViewController {
     @IBOutlet weak var deleteSuccess: NSImageView!
     @IBOutlet weak var deleteFailed: NSImageView!
     @IBOutlet weak var deleteDeviceButton: NSButton!
+    @IBOutlet weak var userNameToCheck: NSTextField!
+    @IBOutlet weak var deviceSNLabel: NSTextField!
+    @IBOutlet weak var deviceNameLabel: NSTextField!
+    @IBOutlet weak var deviceMACLabel: NSTextField!
+    @IBOutlet weak var deviceIPLabel: NSTextField!
+    @IBOutlet weak var deviceINVLabel: NSTextField!
 
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(sender: NSButton) {
@@ -208,6 +214,61 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func FindUserInfo(sender: AnyObject) {
+        // print ("Pressed User button")
+        let theString = jssURL.stringValue + "/JSSResource/mobiledevices/match/" + userNameToCheck.stringValue
+        // print (theString)
+        let userData = Just.get(theString, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+        // print (userData)
+        var checkDevice = userData.componentsSeparatedByString("<size>")[1]
+        checkDevice = checkDevice.componentsSeparatedByString("</size")[0]
+        // print (checkDevice)
+        if (checkDevice == "0") {
+            
+        }
+       
+        else {
+            // print (userData)
+            // Save Serial Number
+            var deviceSN = userData.componentsSeparatedByString("<serial_number>")[1]
+            deviceSN = deviceSN.componentsSeparatedByString("</serial_number>")[0]
+            var deviceName = userData.componentsSeparatedByString("<name>")[1]
+            deviceName = deviceName.componentsSeparatedByString("</name")[0]
+            var macAddress = userData.componentsSeparatedByString("<wifi_mac_address>")[1]
+            macAddress = macAddress.componentsSeparatedByString("</wifi_mac_address>")[0]
+            // print("Device Data is as follows")
+            // print("-------------------------")
+            // print("Device username is: " + userNameToCheck.stringValue)
+            // print("Device Serial Number: " + deviceSN)
+            // print("Device Name is: " + deviceName)
+            // print("Device MAC adderss is: " + macAddress)
+        
+            let theString2 = jssURL.stringValue + "/JSSResource/mobiledevices/serialnumber/" + deviceSN
+            let IPData = Just.get(theString2, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+            // print(IPData)
+            var deviceIP = IPData.componentsSeparatedByString("<ip_address>")[1]
+            deviceIP = deviceIP.componentsSeparatedByString("</ip_address>")[0]
+            // print("Device IP Address is: " + deviceIP)
+            // Add in check for inventory data
+            
+            var deviceInvDate = IPData.componentsSeparatedByString("<last_inventory_update>")[1]
+            deviceInvDate = deviceInvDate.componentsSeparatedByString("</last_inventory_update>")[0]
+            // print("Device last updated inventory on: " + deviceInvDate)
+
+        
+            // Use Device Serial Number to Query:
+            // jssURL.stringvalue + "/JSSResource/mobiledevices/serialnumber/" + Serial Number
+            // Save back the IP address
+            deviceSNLabel.stringValue = deviceSN
+            deviceNameLabel.stringValue = deviceName
+            deviceMACLabel.stringValue = macAddress
+            deviceIPLabel.stringValue = deviceIP
+            deviceINVLabel.stringValue = deviceInvDate
+        }
+        
+        
+        
+    }
     // Run this function when clicking "Save Settings"
     @IBAction func saveSettings(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(jssURL.stringValue, forKey: "kJSSURL")

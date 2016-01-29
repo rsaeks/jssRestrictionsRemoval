@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E33e" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
@@ -669,11 +669,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="JSS_Restrictions_Removal_Tool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="540"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-hc-n3Y">
-                                <rect key="frame" x="130" y="442" width="379" height="23"/>
+                                <rect key="frame" x="130" y="502" width="379" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="JSS Restriction Removal Tool" id="eAe-4f-R9T">
                                     <font key="font" metaFont="systemBold" size="18"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -681,7 +681,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Li-ipm">
-                                <rect key="frame" x="19" y="249" width="603" height="182"/>
+                                <rect key="frame" x="19" y="309" width="603" height="182"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="TbH-8P-Ywz">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">This tool will allow you to quickly remove and re-apply restrictions from an iOS device for troubleshooting. A member of the technology team can provide you with the Casper Server Address and the Exception Group ID #.
@@ -694,7 +694,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nr0-ma-Ppw">
-                                <rect key="frame" x="23" y="32" width="155" height="32"/>
+                                <rect key="frame" x="23" y="92" width="155" height="32"/>
                                 <buttonCell key="cell" type="push" title="Remove Restrictions" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uYC-Qr-v9L">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -704,7 +704,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJR-6T-3Tu">
-                                <rect key="frame" x="189" y="32" width="161" height="32"/>
+                                <rect key="frame" x="189" y="92" width="161" height="32"/>
                                 <buttonCell key="cell" type="push" title="Re-Apply Restrictions" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="axesIndependently" inset="2" id="Mmc-Ut-76a">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -714,7 +714,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-S0-ZrV">
-                                <rect key="frame" x="39" y="212" width="144" height="17"/>
+                                <rect key="frame" x="39" y="272" width="144" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Casper Server Address" id="1j8-E7-ZXz">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -722,7 +722,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5A-OU-TTB">
-                                <rect key="frame" x="195" y="209" width="267" height="22"/>
+                                <rect key="frame" x="195" y="269" width="267" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="https://mdm.yourcompany.org:8443" drawsBackground="YES" id="7AG-lf-ALA">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -730,7 +730,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSa-lJ-l2h">
-                                <rect key="frame" x="195" y="177" width="96" height="22"/>
+                                <rect key="frame" x="195" y="237" width="96" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="G5N-oC-ar1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -738,7 +738,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KkP-LI-hd1">
-                                <rect key="frame" x="39" y="176" width="133" height="17"/>
+                                <rect key="frame" x="39" y="236" width="133" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Exception Group ID #" id="f4S-ZI-w6W">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -746,7 +746,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8px-8i-C3a">
-                                <rect key="frame" x="39" y="144" width="66" height="17"/>
+                                <rect key="frame" x="39" y="204" width="66" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username" id="vhL-nq-vDn">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -754,7 +754,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zx8-nF-O9T">
-                                <rect key="frame" x="195" y="144" width="96" height="22"/>
+                                <rect key="frame" x="195" y="204" width="96" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="username" drawsBackground="YES" id="IxB-ny-nUx">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -762,7 +762,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufO-F7-wUa">
-                                <rect key="frame" x="40" y="112" width="63" height="17"/>
+                                <rect key="frame" x="40" y="172" width="63" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="0Gj-ZM-6Ad">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -770,7 +770,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMQ-Vc-cLw">
-                                <rect key="frame" x="195" y="112" width="96" height="22"/>
+                                <rect key="frame" x="195" y="172" width="96" height="22"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="oKT-yp-fX1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -781,7 +781,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </secureTextFieldCell>
                             </secureTextField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5A-ld-HSn">
-                                <rect key="frame" x="39" y="80" width="135" height="17"/>
+                                <rect key="frame" x="39" y="140" width="135" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Device Serial Number" id="KVz-KS-Loi">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -789,7 +789,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvG-EH-e3i">
-                                <rect key="frame" x="195" y="80" width="135" height="22"/>
+                                <rect key="frame" x="195" y="140" width="135" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Serial Number" drawsBackground="YES" id="BP7-De-pxr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -797,19 +797,19 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5L-gj-PCd">
-                                <rect key="frame" x="578" y="209" width="19" height="22"/>
+                                <rect key="frame" x="578" y="269" width="19" height="22"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="ceK-Xx-7a1"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BIP-YD-Ck3">
-                                <rect key="frame" x="577" y="209" width="22" height="22"/>
+                                <rect key="frame" x="577" y="269" width="22" height="22"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusNone" id="6FN-ka-4Su"/>
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-zs-it7">
-                                <rect key="frame" x="576" y="209" width="24" height="21"/>
+                                <rect key="frame" x="576" y="269" width="24" height="21"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="hSw-zE-6LP"/>
                             </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swq-Cj-CNS">
-                                <rect key="frame" x="469" y="211" width="105" height="16"/>
+                                <rect key="frame" x="469" y="271" width="105" height="16"/>
                                 <buttonCell key="cell" type="push" title="Check Connection" bezelStyle="rounded" imagePosition="overlaps" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1bd-6s-tRD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="miniSystem"/>
@@ -819,27 +819,27 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E65-RO-0pF">
-                                <rect key="frame" x="93" y="9" width="23" height="30"/>
+                                <rect key="frame" x="93" y="69" width="23" height="30"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusNone" id="n7L-LA-GIS"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byt-vn-e4K">
-                                <rect key="frame" x="251" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="251" y="60" width="48" height="48"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusNone" id="ESG-H7-VxR"/>
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hB0-M0-Pm0">
-                                <rect key="frame" x="81" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="81" y="60" width="48" height="48"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="1j3-Mc-mqW"/>
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eaq-z2-Zct">
-                                <rect key="frame" x="251" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="251" y="60" width="48" height="48"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="H25-PH-bSF"/>
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COo-V8-1Xh">
-                                <rect key="frame" x="81" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="81" y="60" width="48" height="48"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="O9d-xY-68Z"/>
                             </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iaz-oH-7Lq">
-                                <rect key="frame" x="512" y="32" width="123" height="32"/>
+                                <rect key="frame" x="512" y="92" width="123" height="32"/>
                                 <buttonCell key="cell" type="push" title="Save Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VMJ-p6-4fC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -849,7 +849,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </connections>
                             </button>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sb2-gM-ucZ">
-                                <rect key="frame" x="358" y="135" width="244" height="21"/>
+                                <rect key="frame" x="358" y="195" width="244" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Invalid Username / password" id="WIG-11-rUM">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -857,7 +857,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wmn-3x-v8A">
-                                <rect key="frame" x="358" y="76" width="244" height="52"/>
+                                <rect key="frame" x="358" y="136" width="244" height="52"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Please Check Group ID or Device Serial Number" id="fZ8-hJ-Gmm">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -865,7 +865,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TcN-CW-0KO">
-                                <rect key="frame" x="358" y="153" width="252" height="48"/>
+                                <rect key="frame" x="358" y="213" width="252" height="48"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Unable to connect to JSS. Please doublecheck address or " id="pIc-Eq-Fil">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -873,7 +873,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HaM-HD-J0g">
-                                <rect key="frame" x="357" y="61" width="244" height="27"/>
+                                <rect key="frame" x="357" y="121" width="244" height="27"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Other Error Encountered" id="S5S-BJ-He8">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -881,11 +881,11 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </textFieldCell>
                             </textField>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hY-3M-7kL">
-                                <rect key="frame" x="251" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="251" y="60" width="48" height="48"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="p1M-cw-Knd"/>
                             </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hmw-Fh-Xfa">
-                                <rect key="frame" x="375" y="32" width="124" height="32"/>
+                                <rect key="frame" x="375" y="92" width="124" height="32"/>
                                 <buttonCell key="cell" type="push" title="Delete Device" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MQ6-FK-2EA">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -895,7 +895,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </connections>
                             </button>
                             <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xNA-Mu-KeF">
-                                <rect key="frame" x="501" y="168" width="85" height="16"/>
+                                <rect key="frame" x="501" y="228" width="85" height="16"/>
                                 <buttonCell key="cell" type="push" title="try in browser" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hwH-E2-gwy">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="miniSystem"/>
@@ -905,13 +905,80 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 </connections>
                             </button>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BBk-Eb-4Ts">
-                                <rect key="frame" x="413" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="413" y="60" width="48" height="48"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="zo9-iB-bq1"/>
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adF-5x-yIp">
-                                <rect key="frame" x="414" y="0.0" width="48" height="48"/>
+                                <rect key="frame" x="414" y="60" width="48" height="48"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="KX0-Q7-JaX"/>
                             </imageView>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFf-Oe-e1b">
+                                <rect key="frame" x="5" y="39" width="124" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="SqY-3j-Z4A">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khA-Ru-aRR">
+                                <rect key="frame" x="27" y="3" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="urf-cH-gx6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="FindUserInfo:" target="XfG-lQ-9wD" id="RP8-ep-W0L"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxR-5B-DLa">
+                                <rect key="frame" x="152" y="44" width="530" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="cZu-Nb-8Fx">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <string key="title">Device SN                     Device Name                 MAC                     IP                                     Last Inventory</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVo-A7-iC3">
+                                <rect key="frame" x="152" y="25" width="112" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="dws-1B-91q">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sLr-wO-A2P">
+                                <rect key="frame" x="254" y="0.0" width="92" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="mPN-Bt-zSi">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-fS-mWy">
+                                <rect key="frame" x="379" y="20" width="94" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="mJJ-KW-tk6">
+                                    <font key="font" metaFont="system" size="9"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MhD-52-dF0">
+                                <rect key="frame" x="456" y="0.0" width="72" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="1xf-DA-k7h">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="di1-xx-H2t">
+                                <rect key="frame" x="520" y="29" width="182" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="lwQ-pY-bhX">
+                                    <font key="font" metaFont="system" size="10"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -919,7 +986,12 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                         <outlet property="deleteDeviceButton" destination="Hmw-Fh-Xfa" id="PpS-kH-zPB"/>
                         <outlet property="deleteFailed" destination="BBk-Eb-4Ts" id="bQz-8H-A6o"/>
                         <outlet property="deleteSuccess" destination="adF-5x-yIp" id="dgh-RV-wMH"/>
+                        <outlet property="deviceINVLabel" destination="di1-xx-H2t" id="bOa-N7-yBl"/>
+                        <outlet property="deviceIPLabel" destination="MhD-52-dF0" id="LbJ-nV-Qax"/>
+                        <outlet property="deviceMACLabel" destination="EFi-fS-mWy" id="TSG-Fq-vxa"/>
+                        <outlet property="deviceNameLabel" destination="sLr-wO-A2P" id="3WL-cu-4Fb"/>
                         <outlet property="deviceSN" destination="fvG-EH-e3i" id="oRe-pK-N68"/>
+                        <outlet property="deviceSNLabel" destination="qVo-A7-iC3" id="bdZ-m3-1OR"/>
                         <outlet property="exclusionGID" destination="pSa-lJ-l2h" id="UEb-bh-oGD"/>
                         <outlet property="invalidGIDorSN" destination="Wmn-3x-v8A" id="mFB-Tj-M2g"/>
                         <outlet property="invalidPassword" destination="Sb2-gM-ucZ" id="0LM-vg-WsD"/>
@@ -939,6 +1011,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                         <outlet property="removeSuccess" destination="hB0-M0-Pm0" id="4Lo-pw-Kcz"/>
                         <outlet property="removeUnknown" destination="E65-RO-0pF" id="v8F-ho-J5U"/>
                         <outlet property="unableToConnectJSS" destination="TcN-CW-0KO" id="S6L-VD-waI"/>
+                        <outlet property="userNameToCheck" destination="CFf-Oe-e1b" id="QZ7-1b-xjS"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
