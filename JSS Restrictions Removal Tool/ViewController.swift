@@ -63,6 +63,11 @@ class ViewController: NSViewController {
     @IBOutlet weak var deviceIPLabel: NSTextField!
     @IBOutlet weak var deviceINVLabel: NSTextField!
 
+    // Globals for API Paths
+    let devAPIPath = "/JSSResource/mobiledevicegroups/id/"
+    let devAPIMatchPath = "/JSSResource/mobiledevices/match/"
+    let devAPISNPatch = "/JSSResource/mobiledevices/serialnumber/"
+    
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(sender: NSButton) {
         
@@ -102,7 +107,7 @@ class ViewController: NSViewController {
     @IBAction func removeRestrictions(sender: AnyObject) {
         resetStatus()
         jssConnectYes.hidden = false
-        let builtURL = jssURL.stringValue + "/JSSResource/mobiledevicegroups/id/" + exclusionGID.stringValue
+        let builtURL = jssURL.stringValue + devAPIPath + exclusionGID.stringValue
         let addCommand  = "<mobile_device_group><mobile_device_additions><mobile_device><serial_number>" + deviceSN.stringValue + "</serial_number></mobile_device></mobile_device_additions></mobile_device_group>"
         let addCommandXML = try! NSXMLDocument(XMLString: addCommand, options: 0)
         let addCommandXMLStatus = Just.put(builtURL, auth: (jssUsername.stringValue, jssPassword.stringValue), headers: ["Content-Type":"text/xml"], requestBody: addCommandXML.XMLData)
@@ -143,7 +148,7 @@ class ViewController: NSViewController {
     @IBAction func reapplyRestrictions(sender: AnyObject) {
         resetStatus()
         jssConnectYes.hidden = false
-        let builtURL = jssURL.stringValue + "/JSSResource/mobiledevicegroups/id/" + exclusionGID.stringValue
+        let builtURL = jssURL.stringValue + devAPIPath + exclusionGID.stringValue
         let removeCommand  = "<mobile_device_group><mobile_device_deletions><mobile_device><serial_number>" + deviceSN.stringValue + "</serial_number></mobile_device></mobile_device_deletions></mobile_device_group>"
         let removeCommandXML = try! NSXMLDocument(XMLString: removeCommand, options: 0)
         let removeCommandXMLStatus = Just.put(builtURL, auth: (jssUsername.stringValue, jssPassword.stringValue), headers: ["Content-Type":"text/xml"], requestBody: removeCommandXML.XMLData)
@@ -182,7 +187,7 @@ class ViewController: NSViewController {
     // Run this when clicking delete device button
     @IBAction func deleteDevice(sender: AnyObject) {
         resetStatus()
-        let removeURL=jssURL.stringValue + "/JSSResource/mobiledevices/match/" + deviceSN.stringValue
+        let removeURL=jssURL.stringValue + devAPIMatchPath + deviceSN.stringValue
         let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
         // Check for an authentication error.
         if (deviceData.rangeOfString("authentication") != nil) {
@@ -194,7 +199,7 @@ class ViewController: NSViewController {
             var subStr = deviceData[deviceData.startIndex.advancedBy(83)...deviceData.startIndex.advancedBy(100)]
             subStr = subStr.stringByReplacingOccurrencesOfString("<id>", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             let IDNumber = subStr.componentsSeparatedByString("<")[0]
-            let deleteDevice = Just.delete(jssURL.stringValue + "/JSSResource/mobiledevices/id/" + IDNumber, auth: (jssUsername.stringValue, jssPassword.stringValue))
+            let deleteDevice = Just.delete(jssURL.stringValue + devAPIPath + IDNumber, auth: (jssUsername.stringValue, jssPassword.stringValue))
             print (deleteDevice.statusCode)
             // Check the response code of the delete command.
             if (deleteDevice.ok) {
@@ -215,58 +220,51 @@ class ViewController: NSViewController {
     }
     
     @IBAction func FindUserInfo(sender: AnyObject) {
-        // print ("Pressed User button")
-        let theString = jssURL.stringValue + "/JSSResource/mobiledevices/match/" + userNameToCheck.stringValue
-        // print (theString)
-        let userData = Just.get(theString, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
-        // print (userData)
+        resetStatus()
+        let userData = Just.get(jssURL.stringValue + devAPIMatchPath + userNameToCheck.stringValue, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+        if (userData.rangeOfString("authentication") != nil) {
+            invalidPassword.hidden = false
+        }
+        else {
+            
         var checkDevice = userData.componentsSeparatedByString("<size>")[1]
         checkDevice = checkDevice.componentsSeparatedByString("</size")[0]
-        // print (checkDevice)
         if (checkDevice == "0") {
-            
+            resetStatus()
+            invalidGIDorSN.hidden = false
         }
        
         else {
-            // print (userData)
-            // Save Serial Number
+            // Pull out Value between ITEM: eg <ITEM>Value</ITEM>
             var deviceSN = userData.componentsSeparatedByString("<serial_number>")[1]
             deviceSN = deviceSN.componentsSeparatedByString("</serial_number>")[0]
             var deviceName = userData.componentsSeparatedByString("<name>")[1]
             deviceName = deviceName.componentsSeparatedByString("</name")[0]
             var macAddress = userData.componentsSeparatedByString("<wifi_mac_address>")[1]
             macAddress = macAddress.componentsSeparatedByString("</wifi_mac_address>")[0]
-            // print("Device Data is as follows")
-            // print("-------------------------")
-            // print("Device username is: " + userNameToCheck.stringValue)
-            // print("Device Serial Number: " + deviceSN)
-            // print("Device Name is: " + deviceName)
-            // print("Device MAC adderss is: " + macAddress)
         
-            let theString2 = jssURL.stringValue + "/JSSResource/mobiledevices/serialnumber/" + deviceSN
-            let IPData = Just.get(theString2, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
-            // print(IPData)
+            let IPData = Just.get(jssURL.stringValue + devAPISNPatch + deviceSN, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
             var deviceIP = IPData.componentsSeparatedByString("<ip_address>")[1]
             deviceIP = deviceIP.componentsSeparatedByString("</ip_address>")[0]
-            // print("Device IP Address is: " + deviceIP)
-            // Add in check for inventory data
-            
-            var deviceInvDate = IPData.componentsSeparatedByString("<last_inventory_update>")[1]
-            deviceInvDate = deviceInvDate.componentsSeparatedByString("</last_inventory_update>")[0]
-            // print("Device last updated inventory on: " + deviceInvDate)
 
-        
-            // Use Device Serial Number to Query:
-            // jssURL.stringvalue + "/JSSResource/mobiledevices/serialnumber/" + Serial Number
-            // Save back the IP address
-            deviceSNLabel.stringValue = deviceSN
-            deviceNameLabel.stringValue = deviceName
-            deviceMACLabel.stringValue = macAddress
-            deviceIPLabel.stringValue = deviceIP
-            deviceINVLabel.stringValue = deviceInvDate
+            if ((IPData.rangeOfString("<last_inventory_update_epoch>0")) != nil) {
+                deviceSNLabel.stringValue = deviceSN
+                deviceNameLabel.stringValue = deviceName
+                deviceMACLabel.stringValue = macAddress
+                deviceIPLabel.stringValue = deviceIP
+                deviceINVLabel.stringValue = "Not Found"
+            }
+            else {
+                var deviceInvDate = IPData.componentsSeparatedByString("<last_inventory_update>")[1]
+                deviceInvDate = deviceInvDate.componentsSeparatedByString("</last_inventory_update>")[0]
+                deviceSNLabel.stringValue = deviceSN
+                deviceNameLabel.stringValue = deviceName
+                deviceMACLabel.stringValue = macAddress
+                deviceIPLabel.stringValue = deviceIP
+                deviceINVLabel.stringValue = deviceInvDate
+                }
+            }
         }
-        
-        
         
     }
     // Run this function when clicking "Save Settings"
