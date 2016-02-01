@@ -62,6 +62,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var deviceMACLabel: NSTextField!
     @IBOutlet weak var deviceIPLabel: NSTextField!
     @IBOutlet weak var deviceINVLabel: NSTextField!
+    @IBOutlet weak var userCheckButton: NSButton!
 
     // Globals for API Paths
     let devAPIPath = "/JSSResource/mobiledevicegroups/id/"
@@ -85,6 +86,7 @@ class ViewController: NSViewController {
             jssConnectYes.hidden = false
             removeEnabled.enabled = true
             reapplyEnabled.enabled = true
+            userCheckButton.enabled = true
         }
 
         else {

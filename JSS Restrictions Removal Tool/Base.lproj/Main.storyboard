@@ -672,14 +672,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="700" height="540"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-hc-n3Y">
-                                <rect key="frame" x="130" y="502" width="379" height="23"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="JSS Restriction Removal Tool" id="eAe-4f-R9T">
-                                    <font key="font" metaFont="systemBold" size="18"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-Li-ipm">
                                 <rect key="frame" x="19" y="309" width="663" height="182"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="TbH-8P-Ywz">
@@ -912,7 +904,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khA-Ru-aRR">
                                 <rect key="frame" x="7" y="3" width="121" height="32"/>
-                                <buttonCell key="cell" type="push" title="Get User Info" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="urf-cH-gx6">
+                                <buttonCell key="cell" type="push" title="Get User Info" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="urf-cH-gx6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -979,6 +971,14 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                     <action selector="openJSSURLInBrowser:" target="XfG-lQ-9wD" id="n39-js-PVk"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TiO-hc-n3Y">
+                                <rect key="frame" x="161" y="504" width="379" height="23"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="JSS Restriction Removal Tool" id="eAe-4f-R9T">
+                                    <font key="font" metaFont="systemBold" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1011,6 +1011,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                         <outlet property="removeSuccess" destination="hB0-M0-Pm0" id="4Lo-pw-Kcz"/>
                         <outlet property="removeUnknown" destination="E65-RO-0pF" id="v8F-ho-J5U"/>
                         <outlet property="unableToConnectJSS" destination="TcN-CW-0KO" id="S6L-VD-waI"/>
+                        <outlet property="userCheckButton" destination="khA-Ru-aRR" id="IFf-ci-Szr"/>
                         <outlet property="userNameToCheck" destination="CFf-Oe-e1b" id="QZ7-1b-xjS"/>
                     </connections>
                 </viewController>
