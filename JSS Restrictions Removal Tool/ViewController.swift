@@ -238,19 +238,20 @@ class ViewController: NSViewController {
        
         else {
             // Pull out Value between ITEM: eg <ITEM>Value</ITEM>
-            var deviceSN = userData.componentsSeparatedByString("<serial_number>")[1]
-            deviceSN = deviceSN.componentsSeparatedByString("</serial_number>")[0]
+            var tempDeviceSN = userData.componentsSeparatedByString("<serial_number>")[1]
+            tempDeviceSN = tempDeviceSN.componentsSeparatedByString("</serial_number>")[0]
             var deviceName = userData.componentsSeparatedByString("<name>")[1]
             deviceName = deviceName.componentsSeparatedByString("</name")[0]
             var macAddress = userData.componentsSeparatedByString("<wifi_mac_address>")[1]
             macAddress = macAddress.componentsSeparatedByString("</wifi_mac_address>")[0]
         
-            let IPData = Just.get(jssURL.stringValue + devAPISNPatch + deviceSN, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+            let IPData = Just.get(jssURL.stringValue + devAPISNPatch + tempDeviceSN, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
             var deviceIP = IPData.componentsSeparatedByString("<ip_address>")[1]
             deviceIP = deviceIP.componentsSeparatedByString("</ip_address>")[0]
 
             if ((IPData.rangeOfString("<last_inventory_update_epoch>0")) != nil) {
-                deviceSNLabel.stringValue = deviceSN
+                deviceSNLabel.stringValue = tempDeviceSN
+                deviceSN.stringValue = tempDeviceSN
                 deviceNameLabel.stringValue = deviceName
                 deviceMACLabel.stringValue = macAddress
                 deviceIPLabel.stringValue = deviceIP
@@ -259,7 +260,8 @@ class ViewController: NSViewController {
             else {
                 var deviceInvDate = IPData.componentsSeparatedByString("<last_inventory_update>")[1]
                 deviceInvDate = deviceInvDate.componentsSeparatedByString("</last_inventory_update>")[0]
-                deviceSNLabel.stringValue = deviceSN
+                deviceSNLabel.stringValue = tempDeviceSN
+                deviceSN.stringValue = tempDeviceSN
                 deviceNameLabel.stringValue = deviceName
                 deviceMACLabel.stringValue = macAddress
                 deviceIPLabel.stringValue = deviceIP
