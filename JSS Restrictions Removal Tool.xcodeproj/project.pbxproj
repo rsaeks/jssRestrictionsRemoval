@@ -3,19 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040E7EE81E03241800B39107 /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E7EE71E03241800B39107 /* Just.swift */; };
 		047D7CDB1C03743E00EF7872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D7CDA1C03743E00EF7872 /* AppDelegate.swift */; };
 		047D7CDD1C03743E00EF7872 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D7CDC1C03743E00EF7872 /* ViewController.swift */; };
 		047D7CE01C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 047D7CDE1C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld */; };
 		047D7CE21C03743E00EF7872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D7CE11C03743E00EF7872 /* Assets.xcassets */; };
 		047D7CE51C03743E00EF7872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047D7CE31C03743E00EF7872 /* Main.storyboard */; };
-		D57335951C0CBC0800B368BD /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57335941C0CBC0800B368BD /* Just.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040E7EE71E03241800B39107 /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Just.swift; path = ../Just.swift; sourceTree = "<group>"; };
 		047D7CD71C03743E00EF7872 /* JSS Restrictions Removal Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSS Restrictions Removal Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047D7CDA1C03743E00EF7872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		047D7CDC1C03743E00EF7872 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		047D7CE41C03743E00EF7872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		047D7CE61C03743E00EF7872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04BA0FC11C038821001AEE83 /* JSS Restrictions Removal Tool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "JSS Restrictions Removal Tool.entitlements"; sourceTree = "<group>"; };
-		D57335941C0CBC0800B368BD /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 		047D7CD91C03743E00EF7872 /* JSS Restrictions Removal Tool */ = {
 			isa = PBXGroup;
 			children = (
-				D57335941C0CBC0800B368BD /* Just.swift */,
+				040E7EE71E03241800B39107 /* Just.swift */,
 				04BA0FC11C038821001AEE83 /* JSS Restrictions Removal Tool.entitlements */,
 				047D7CDA1C03743E00EF7872 /* AppDelegate.swift */,
 				047D7CDC1C03743E00EF7872 /* ViewController.swift */,
@@ -96,12 +96,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Randy Saeks";
 				TargetAttributes = {
 					047D7CD61C03743E00EF7872 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = L3CMP2L959;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -111,7 +112,7 @@
 				};
 			};
 			buildConfigurationList = 047D7CD21C03743E00EF7872 /* Build configuration list for PBXProject "JSS Restrictions Removal Tool" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -148,7 +149,7 @@
 				047D7CDD1C03743E00EF7872 /* ViewController.swift in Sources */,
 				047D7CDB1C03743E00EF7872 /* AppDelegate.swift in Sources */,
 				047D7CE01C03743E00EF7872 /* JSS_Restrictions_Removal_Tool.xcdatamodeld in Sources */,
-				D57335951C0CBC0800B368BD /* Just.swift in Sources */,
+				040E7EE81E03241800B39107 /* Just.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,11 +180,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -223,11 +226,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -243,6 +248,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -250,7 +256,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -258,6 +264,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsaeks.JRRT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -265,7 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
@@ -274,6 +281,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsaeks.JRRT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
