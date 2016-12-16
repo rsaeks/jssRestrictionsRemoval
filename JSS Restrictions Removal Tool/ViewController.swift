@@ -63,12 +63,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var deviceIPLabel: NSTextField!
     @IBOutlet weak var deviceINVLabel: NSTextField!
     @IBOutlet weak var userCheckButton: NSButton!
-    @IBOutlet weak var updateInventoryButton: NSButton!
+    @IBOutlet weak var UpdateInventoryButton: NSButton!
+
 
     // Globals for API Paths
     let devAPIPath = "/JSSResource/mobiledevicegroups/id/"
     let devAPIMatchPath = "/JSSResource/mobiledevices/match/"
     let devAPISNPatch = "/JSSResource/mobiledevices/serialnumber/"
+    let devAPIUpdateInventoryPath = "/JSSResource/mobiledevicecommands/command/UpdateInventory/id/"
     
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(_ sender: NSButton) {
@@ -88,7 +90,7 @@ class ViewController: NSViewController {
             removeEnabled.isEnabled = true
             reapplyEnabled.isEnabled = true
             userCheckButton.isEnabled = true
-            updateInventoryButton.isEnabled = true
+            UpdateInventoryButton.isEnabled = true
         }
 
         else {
@@ -188,9 +190,40 @@ class ViewController: NSViewController {
 
     }
 
+    // Run this function when clicking Update Inventory
     @IBAction func updateInventoryButtonPushed(_ sender: Any) {
+        let removeURL=jssURL.stringValue + devAPIMatchPath + deviceSN.stringValue
+        let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+        // Check for an authentication error.
+        if (deviceData.range(of: "authentication") != nil) {
+            invalidPassword.isHidden = false
+            deleteFailed.isHidden = false
+        }
+            // Check for returned number of items being equal to 1 device.
+        else if (deviceData.range(of: "<size>1") != nil) {
+            var subStr = deviceData[deviceData.characters.index(deviceData.startIndex, offsetBy: 83)...deviceData.characters.index(deviceData.startIndex, offsetBy: 100)]
+            subStr = subStr.replacingOccurrences(of: "<id>", with: "", options: NSString.CompareOptions.literal, range: nil)
+            let IDNumber = subStr.components(separatedBy: "<")[0]
+            let UpdateInventoryCommandURL = jssURL.stringValue + devAPIUpdateInventoryPath + IDNumber
+            print(UpdateInventoryCommandURL)
+            // JSSResource/mobiledevicecommands/command/UpdateInventory/id/13 -X POST
+            let UpdateInventory = Just.post(UpdateInventoryCommandURL, auth: (jssUsername.stringValue, jssPassword.stringValue))
+            print (UpdateInventory.statusCode ?? 9999)
+        }
+        
         
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Run this when clicking delete device button
     @IBAction func deleteDevice(_ sender: AnyObject) {
         resetStatus()

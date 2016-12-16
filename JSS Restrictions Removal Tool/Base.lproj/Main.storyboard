@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D12b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -962,6 +962,11 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 <rect key="frame" x="674" y="102" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="O9d-xY-68Z"/>
                             </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azm-K7-Wfu" userLabel="Update Inventory Fail">
+                                <rect key="frame" x="464" y="110" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="DJO-ai-tvo"/>
+                            </imageView>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sb2-gM-ucZ">
                                 <rect key="frame" x="375" y="267" width="167" height="16"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Invalid Username / password" id="WIG-11-rUM">
@@ -1005,6 +1010,11 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adF-5x-yIp">
                                 <rect key="frame" x="674" y="43" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="KX0-Q7-JaX"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WX3-5I-Jdi" userLabel="Update Inventory Success">
+                                <rect key="frame" x="464" y="110" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="sgF-Al-5Oc"/>
                             </imageView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPG-JG-uAk">
                                 <rect key="frame" x="95" y="17" width="200" height="73"/>
@@ -1167,7 +1177,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                         </constraints>
                                         <buttonCell key="cell" type="push" title="Remove Restrictions" bezelStyle="rounded" image="trashcan" imagePosition="left" alignment="left" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uYC-Qr-v9L">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="system" size="12"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="removeRestrictions:" target="XfG-lQ-9wD" id="jmc-fP-cPJ"/>
@@ -1180,7 +1190,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                         </constraints>
                                         <buttonCell key="cell" type="push" title="Re-Apply Restrictions" bezelStyle="rounded" image="rotaterightbtn" imagePosition="left" alignment="left" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mmc-Ut-76a">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="12"/>
+                                            <font key="font" metaFont="cellTitle"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="reapplyRestrictions:" target="XfG-lQ-9wD" id="6bB-oH-rEm"/>
@@ -1212,17 +1222,66 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-bF-jlO">
-                                <rect key="frame" x="333" y="100" width="145" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Update Inventory" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rfs-L4-XCv">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="updateInventoryButtonPushed:" target="XfG-lQ-9wD" id="Gmg-1O-A59"/>
-                                </connections>
-                            </button>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vmo-ak-8YH">
+                                <rect key="frame" x="303" y="17" width="155" height="108"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tNQ-bF-jlO" userLabel="Update Inventory Button">
+                                        <rect key="frame" x="-6" y="80" width="167" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="7ey-2o-dJS"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Update Inventory" bezelStyle="rounded" image="update-888512_1280" imagePosition="left" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rfs-L4-XCv">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="12"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="updateInventoryButtonPushed:" target="XfG-lQ-9wD" id="Gmg-1O-A59"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L0u-1I-6Oj">
+                                        <rect key="frame" x="-6" y="51" width="167" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="e5w-VN-mLf"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Send Blank Push" bezelStyle="rounded" image="arrows" imagePosition="left" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UMY-YO-y5a">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="12"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-JR-6tK">
+                                        <rect key="frame" x="-6" y="22" width="167" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="FtA-Fu-o6U"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Enable Lost Mode" bezelStyle="rounded" image="Magnifying_glass_icon.svg" imagePosition="left" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Nw0-cc-XWZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="12"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Xp-Kg-GJE">
+                                        <rect key="frame" x="-6" y="-7" width="167" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="CBP-1y-iWf"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Disable Lost Mode" bezelStyle="rounded" image="Magnifying_glass_icon.svg-1" imagePosition="left" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aPN-cA-GUo">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="12"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="adF-5x-yIp" firstAttribute="centerY" secondItem="Hmw-Fh-Xfa" secondAttribute="centerY" id="00J-3y-akq"/>
@@ -1239,6 +1298,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                             <constraint firstItem="TiO-hc-n3Y" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="13" id="CCH-CD-fnf"/>
                             <constraint firstAttribute="trailing" secondItem="xNA-Mu-KeF" secondAttribute="trailing" constant="165" id="D2p-0s-ZfM"/>
                             <constraint firstAttribute="trailing" secondItem="Max-Yt-dTq" secondAttribute="trailing" constant="106" id="DWw-jd-GC2"/>
+                            <constraint firstAttribute="bottom" secondItem="Vmo-ak-8YH" secondAttribute="bottom" constant="17" id="ECn-OK-16L"/>
                             <constraint firstAttribute="trailing" secondItem="Byt-vn-e4K" secondAttribute="trailing" constant="10" id="EG0-HD-60f"/>
                             <constraint firstAttribute="bottom" secondItem="adl-KB-Rbq" secondAttribute="bottom" constant="37" id="H96-fE-CV3"/>
                             <constraint firstAttribute="trailing" secondItem="E65-RO-0pF" secondAttribute="trailing" constant="10" id="HeH-rF-ICI"/>
@@ -1256,6 +1316,8 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                             <constraint firstItem="TcN-CW-0KO" firstAttribute="top" secondItem="h5A-OU-TTB" secondAttribute="bottom" constant="9" id="aej-Of-iZ3"/>
                             <constraint firstItem="COo-V8-1Xh" firstAttribute="centerY" secondItem="Nr0-ma-Ppw" secondAttribute="centerY" constant="4.5" id="bjW-U1-Mg1"/>
                             <constraint firstItem="E65-RO-0pF" firstAttribute="centerY" secondItem="Nr0-ma-Ppw" secondAttribute="centerY" constant="4.5" id="cmj-Bj-z1q"/>
+                            <constraint firstItem="Vmo-ak-8YH" firstAttribute="leading" secondItem="tPG-JG-uAk" secondAttribute="trailing" constant="8" id="czg-9D-2MX"/>
+                            <constraint firstItem="adl-KB-Rbq" firstAttribute="leading" secondItem="Vmo-ak-8YH" secondAttribute="trailing" constant="30" id="dF2-MV-JLn"/>
                             <constraint firstItem="TcN-CW-0KO" firstAttribute="leading" secondItem="pSa-lJ-l2h" secondAttribute="trailing" constant="65" id="gCo-yN-W4Q"/>
                             <constraint firstItem="6Bt-cv-bXO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="228" id="hfU-j9-wt1"/>
                             <constraint firstItem="HaM-HD-J0g" firstAttribute="leading" secondItem="pSa-lJ-l2h" secondAttribute="trailing" constant="65" id="iRG-Mz-452"/>
@@ -1279,6 +1341,7 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                     </view>
                     <connections>
                         <outlet property="CheckURLButton" destination="xNA-Mu-KeF" id="0vi-kX-Zmk"/>
+                        <outlet property="UpdateInventoryButton" destination="tNQ-bF-jlO" id="g7H-4e-8Ze"/>
                         <outlet property="deleteDeviceButton" destination="Hmw-Fh-Xfa" id="PpS-kH-zPB"/>
                         <outlet property="deleteFailed" destination="BBk-Eb-4Ts" id="bQz-8H-A6o"/>
                         <outlet property="deleteSuccess" destination="adF-5x-yIp" id="dgh-RV-wMH"/>
@@ -1307,7 +1370,6 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                         <outlet property="removeSuccess" destination="hB0-M0-Pm0" id="4Lo-pw-Kcz"/>
                         <outlet property="removeUnknown" destination="E65-RO-0pF" id="v8F-ho-J5U"/>
                         <outlet property="unableToConnectJSS" destination="TcN-CW-0KO" id="S6L-VD-waI"/>
-                        <outlet property="updateInventoryBUtton" destination="tNQ-bF-jlO" id="dYe-Tg-Guz"/>
                         <outlet property="userCheckButton" destination="khA-Ru-aRR" id="IFf-ci-Szr"/>
                         <outlet property="userNameToCheck" destination="CFf-Oe-e1b" id="QZ7-1b-xjS"/>
                     </connections>
@@ -1318,10 +1380,14 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
         </scene>
     </scenes>
     <resources>
+        <image name="Magnifying_glass_icon.svg" width="1024" height="1024"/>
+        <image name="Magnifying_glass_icon.svg-1" width="1024" height="1024"/>
         <image name="NSStatusAvailable" width="16" height="16"/>
         <image name="NSStatusNone" width="16" height="16"/>
         <image name="NSStatusUnavailable" width="16" height="16"/>
+        <image name="arrows" width="200" height="266"/>
         <image name="rotaterightbtn" width="139" height="97"/>
         <image name="trashcan" width="80" height="80"/>
+        <image name="update-888512_1280" width="1280" height="1178"/>
     </resources>
 </document>
