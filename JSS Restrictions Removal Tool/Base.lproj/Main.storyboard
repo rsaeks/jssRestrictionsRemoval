@@ -804,19 +804,45 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zx8-nF-O9T">
-                                        <rect key="frame" x="0.0" y="90" width="96" height="22"/>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3MX-fa-dk2">
+                                        <rect key="frame" x="0.0" y="90" width="192" height="22"/>
+                                        <subviews>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zx8-nF-O9T">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="96" id="mWj-P9-oms"/>
+                                                </constraints>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="username" drawsBackground="YES" id="IxB-ny-nUx">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iaz-oH-7Lq">
+                                                <rect key="frame" x="99" y="-5" width="98" height="28"/>
+                                                <buttonCell key="cell" type="push" title="Save Settings" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VMJ-p6-4fC">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="smallSystem"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="saveSettings:" target="XfG-lQ-9wD" id="QRJ-Bd-UOS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="96" id="mWj-P9-oms"/>
+                                            <constraint firstItem="Iaz-oH-7Lq" firstAttribute="baseline" secondItem="zx8-nF-O9T" secondAttribute="baseline" id="JSD-Eq-7GK"/>
                                         </constraints>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="username" drawsBackground="YES" id="IxB-ny-nUx">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="24" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fol-o7-K33">
-                                        <rect key="frame" x="0.0" y="60" width="208" height="22"/>
+                                        <rect key="frame" x="0.0" y="60" width="96" height="22"/>
                                         <subviews>
                                             <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eMQ-Vc-cLw">
                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="22"/>
@@ -832,23 +858,11 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                                     </allowedInputSourceLocales>
                                                 </secureTextFieldCell>
                                             </secureTextField>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Iaz-oH-7Lq">
-                                                <rect key="frame" x="115" y="-2" width="98" height="28"/>
-                                                <buttonCell key="cell" type="push" title="Save Settings" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VMJ-p6-4fC">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="smallSystem"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="saveSettings:" target="XfG-lQ-9wD" id="QRJ-Bd-UOS"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
@@ -962,9 +976,8 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 <rect key="frame" x="674" y="102" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="O9d-xY-68Z"/>
                             </imageView>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azm-K7-Wfu" userLabel="Update Inventory Fail">
-                                <rect key="frame" x="464" y="110" width="16" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Azm-K7-Wfu" userLabel="Update Inventory Fail">
+                                <rect key="frame" x="464" y="107" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="DJO-ai-tvo"/>
                             </imageView>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sb2-gM-ucZ">
@@ -1011,10 +1024,17 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                 <rect key="frame" x="674" y="43" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="KX0-Q7-JaX"/>
                             </imageView>
-                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WX3-5I-Jdi" userLabel="Update Inventory Success">
-                                <rect key="frame" x="464" y="110" width="16" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WX3-5I-Jdi" userLabel="Update Inventory Success">
+                                <rect key="frame" x="464" y="106" width="16" height="16"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="sgF-Al-5Oc"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fod-gm-KxO" userLabel="Blank Push Fail">
+                                <rect key="frame" x="466" y="75" width="16" height="16"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="ADs-k6-iof"/>
+                            </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ofj-Ol-Nj9" userLabel="Blank Push Success">
+                                <rect key="frame" x="464" y="75" width="16" height="16"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="WaP-Wb-NAp"/>
                             </imageView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPG-JG-uAk">
                                 <rect key="frame" x="95" y="17" width="200" height="73"/>
@@ -1247,6 +1267,9 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="12"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="sendBlanPushButtonPushed:" target="XfG-lQ-9wD" id="MVt-iP-xK4"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2xE-JR-6tK">
                                         <rect key="frame" x="-6" y="22" width="167" height="32"/>
@@ -1257,6 +1280,9 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="12"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="EnableLostModeButtonPressed:" target="XfG-lQ-9wD" id="zKH-4w-al8"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Xp-Kg-GJE">
                                         <rect key="frame" x="-6" y="-7" width="167" height="32"/>
@@ -1267,6 +1293,9 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="12"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="disableLostModeButtonPressed:" target="XfG-lQ-9wD" id="qD5-sq-tCi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <visibilityPriorities>
@@ -1300,17 +1329,21 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                             <constraint firstAttribute="trailing" secondItem="Max-Yt-dTq" secondAttribute="trailing" constant="106" id="DWw-jd-GC2"/>
                             <constraint firstAttribute="bottom" secondItem="Vmo-ak-8YH" secondAttribute="bottom" constant="17" id="ECn-OK-16L"/>
                             <constraint firstAttribute="trailing" secondItem="Byt-vn-e4K" secondAttribute="trailing" constant="10" id="EG0-HD-60f"/>
+                            <constraint firstItem="WX3-5I-Jdi" firstAttribute="centerY" secondItem="tNQ-bF-jlO" secondAttribute="centerY" id="EUc-Ss-yzA"/>
                             <constraint firstAttribute="bottom" secondItem="adl-KB-Rbq" secondAttribute="bottom" constant="37" id="H96-fE-CV3"/>
                             <constraint firstAttribute="trailing" secondItem="E65-RO-0pF" secondAttribute="trailing" constant="10" id="HeH-rF-ICI"/>
                             <constraint firstAttribute="trailing" secondItem="eaq-z2-Zct" secondAttribute="trailing" constant="10" id="Hrm-R5-dwT"/>
+                            <constraint firstItem="Azm-K7-Wfu" firstAttribute="centerY" secondItem="tNQ-bF-jlO" secondAttribute="centerY" id="JYH-ZT-ktf"/>
                             <constraint firstItem="cc7-Li-ipm" firstAttribute="top" secondItem="TiO-hc-n3Y" secondAttribute="bottom" constant="13" id="KWa-3S-pzf"/>
                             <constraint firstItem="HaM-HD-J0g" firstAttribute="top" secondItem="h5A-OU-TTB" secondAttribute="bottom" constant="9" id="M0a-gJ-FbC"/>
                             <constraint firstItem="BIP-YD-Ck3" firstAttribute="centerY" secondItem="Swq-Cj-CNS" secondAttribute="centerY" id="Mj3-Gn-ehv"/>
                             <constraint firstItem="Byt-vn-e4K" firstAttribute="centerY" secondItem="hJR-6T-3Tu" secondAttribute="centerY" id="Nca-Lp-Mvs"/>
+                            <constraint firstItem="Fod-gm-KxO" firstAttribute="leading" secondItem="L0u-1I-6Oj" secondAttribute="trailing" constant="6" id="O8p-Ft-AjW"/>
                             <constraint firstItem="cc7-Li-ipm" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="21" id="OrS-Gj-3Yu"/>
                             <constraint firstAttribute="trailing" secondItem="cc7-Li-ipm" secondAttribute="trailing" constant="20" id="PDo-Ub-bkm"/>
                             <constraint firstAttribute="bottom" secondItem="3IP-lS-IlL" secondAttribute="bottom" constant="17" id="Qpc-q8-cTq"/>
                             <constraint firstItem="6Bt-cv-bXO" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="22" id="SIH-5s-OVR"/>
+                            <constraint firstItem="WX3-5I-Jdi" firstAttribute="leading" secondItem="tNQ-bF-jlO" secondAttribute="trailing" constant="6" id="Unb-Wk-mw0"/>
                             <constraint firstItem="BIP-YD-Ck3" firstAttribute="leading" secondItem="Max-Yt-dTq" secondAttribute="trailing" constant="4" id="Wlw-bO-1ew"/>
                             <constraint firstAttribute="bottom" secondItem="adl-KB-Rbq" secondAttribute="bottom" constant="37" id="YXD-cs-1I1"/>
                             <constraint firstItem="TcN-CW-0KO" firstAttribute="top" secondItem="h5A-OU-TTB" secondAttribute="bottom" constant="9" id="aej-Of-iZ3"/>
@@ -1319,24 +1352,28 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                             <constraint firstItem="Vmo-ak-8YH" firstAttribute="leading" secondItem="tPG-JG-uAk" secondAttribute="trailing" constant="8" id="czg-9D-2MX"/>
                             <constraint firstItem="adl-KB-Rbq" firstAttribute="leading" secondItem="Vmo-ak-8YH" secondAttribute="trailing" constant="30" id="dF2-MV-JLn"/>
                             <constraint firstItem="TcN-CW-0KO" firstAttribute="leading" secondItem="pSa-lJ-l2h" secondAttribute="trailing" constant="65" id="gCo-yN-W4Q"/>
+                            <constraint firstItem="Ofj-Ol-Nj9" firstAttribute="leading" secondItem="L0u-1I-6Oj" secondAttribute="trailing" constant="6" id="gJA-la-MZX"/>
                             <constraint firstItem="6Bt-cv-bXO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="228" id="hfU-j9-wt1"/>
                             <constraint firstItem="HaM-HD-J0g" firstAttribute="leading" secondItem="pSa-lJ-l2h" secondAttribute="trailing" constant="65" id="iRG-Mz-452"/>
                             <constraint firstAttribute="trailing" secondItem="BBk-Eb-4Ts" secondAttribute="trailing" constant="10" id="j5O-Wi-6FM"/>
                             <constraint firstAttribute="trailing" secondItem="adF-5x-yIp" secondAttribute="trailing" constant="10" id="mOI-1c-iXW"/>
                             <constraint firstItem="BAv-zs-it7" firstAttribute="leading" secondItem="Max-Yt-dTq" secondAttribute="trailing" constant="4" id="mQi-uA-b7E"/>
                             <constraint firstItem="Wmn-3x-v8A" firstAttribute="leading" secondItem="pSa-lJ-l2h" secondAttribute="trailing" constant="65" id="mgT-Ad-bj4"/>
+                            <constraint firstItem="Ofj-Ol-Nj9" firstAttribute="centerY" secondItem="L0u-1I-6Oj" secondAttribute="centerY" id="nuG-QI-wSv"/>
                             <constraint firstItem="BAv-zs-it7" firstAttribute="leading" secondItem="Max-Yt-dTq" secondAttribute="trailing" constant="4" id="oDg-n2-oy7"/>
                             <constraint firstItem="Sb2-gM-ucZ" firstAttribute="top" secondItem="h5A-OU-TTB" secondAttribute="bottom" constant="9" id="p2W-Yc-prY"/>
                             <constraint firstAttribute="trailing" secondItem="hB0-M0-Pm0" secondAttribute="trailing" constant="10" id="pG3-z5-ReH"/>
                             <constraint firstItem="3IP-lS-IlL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="13" id="qVH-Jo-nXN"/>
                             <constraint firstItem="hB0-M0-Pm0" firstAttribute="centerY" secondItem="Nr0-ma-Ppw" secondAttribute="centerY" constant="4.5" id="qkn-FW-M0H"/>
                             <constraint firstItem="hJR-6T-3Tu" firstAttribute="top" secondItem="9hY-3M-7kL" secondAttribute="bottom" constant="-18" id="saq-dU-MNL"/>
+                            <constraint firstItem="Fod-gm-KxO" firstAttribute="centerY" secondItem="L0u-1I-6Oj" secondAttribute="centerY" id="tSS-7w-JUz"/>
                             <constraint firstAttribute="trailing" secondItem="9hY-3M-7kL" secondAttribute="trailing" constant="10" id="uMo-KS-IjE"/>
                             <constraint firstAttribute="bottom" secondItem="adl-KB-Rbq" secondAttribute="bottom" constant="37" id="w8n-oo-GgE"/>
                             <constraint firstItem="hJR-6T-3Tu" firstAttribute="top" secondItem="eaq-z2-Zct" secondAttribute="bottom" constant="-18" id="wwq-Hs-6Un"/>
                             <constraint firstItem="Wmn-3x-v8A" firstAttribute="top" secondItem="h5A-OU-TTB" secondAttribute="bottom" constant="9" id="xxo-V4-Sjo"/>
                             <constraint firstItem="Sb2-gM-ucZ" firstAttribute="leading" secondItem="pSa-lJ-l2h" secondAttribute="trailing" constant="65" id="xxw-ak-Kam"/>
                             <constraint firstAttribute="bottom" secondItem="adl-KB-Rbq" secondAttribute="bottom" constant="37" id="zYE-xQ-02W"/>
+                            <constraint firstItem="Azm-K7-Wfu" firstAttribute="leading" secondItem="tNQ-bF-jlO" secondAttribute="trailing" constant="6" id="zn2-CO-ujf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1351,6 +1388,8 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                         <outlet property="deviceNameLabel" destination="sLr-wO-A2P" id="3WL-cu-4Fb"/>
                         <outlet property="deviceSN" destination="fvG-EH-e3i" id="oRe-pK-N68"/>
                         <outlet property="deviceSNLabel" destination="qVo-A7-iC3" id="bdZ-m3-1OR"/>
+                        <outlet property="disableLostModeButton" destination="9Xp-Kg-GJE" id="fbx-md-lyw"/>
+                        <outlet property="enableLostModeButton" destination="2xE-JR-6tK" id="rMj-0g-ZOl"/>
                         <outlet property="exclusionGID" destination="pSa-lJ-l2h" id="UEb-bh-oGD"/>
                         <outlet property="invalidGIDorSN" destination="Wmn-3x-v8A" id="mFB-Tj-M2g"/>
                         <outlet property="invalidPassword" destination="Sb2-gM-ucZ" id="0LM-vg-WsD"/>
@@ -1369,7 +1408,10 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                         <outlet property="removeFail" destination="COo-V8-1Xh" id="Sr3-X2-V5J"/>
                         <outlet property="removeSuccess" destination="hB0-M0-Pm0" id="4Lo-pw-Kcz"/>
                         <outlet property="removeUnknown" destination="E65-RO-0pF" id="v8F-ho-J5U"/>
+                        <outlet property="sendBlankPushButton" destination="L0u-1I-6Oj" id="gM6-vo-HfI"/>
                         <outlet property="unableToConnectJSS" destination="TcN-CW-0KO" id="S6L-VD-waI"/>
+                        <outlet property="updateInventoryFail" destination="Azm-K7-Wfu" id="8Df-5p-OJL"/>
+                        <outlet property="updateInventorySuccess" destination="WX3-5I-Jdi" id="9Kb-7J-poH"/>
                         <outlet property="userCheckButton" destination="khA-Ru-aRR" id="IFf-ci-Szr"/>
                         <outlet property="userNameToCheck" destination="CFf-Oe-e1b" id="QZ7-1b-xjS"/>
                     </connections>

@@ -64,13 +64,18 @@ class ViewController: NSViewController {
     @IBOutlet weak var deviceINVLabel: NSTextField!
     @IBOutlet weak var userCheckButton: NSButton!
     @IBOutlet weak var UpdateInventoryButton: NSButton!
-
-
+    @IBOutlet weak var sendBlankPushButton: NSButton!
+    @IBOutlet weak var enableLostModeButton: NSButton!
+    @IBOutlet weak var disableLostModeButton: NSButton!
+    @IBOutlet weak var updateInventoryFail: NSImageView!
+    @IBOutlet weak var updateInventorySuccess: NSImageView!
+    
     // Globals for API Paths
     let devAPIPath = "/JSSResource/mobiledevicegroups/id/"
     let devAPIMatchPath = "/JSSResource/mobiledevices/match/"
     let devAPISNPatch = "/JSSResource/mobiledevices/serialnumber/"
     let devAPIUpdateInventoryPath = "/JSSResource/mobiledevicecommands/command/UpdateInventory/id/"
+    let devAPIBlankPushPath = "/JSSResource/mobiledevicecommands/command/BlankPush/id/"
     
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(_ sender: NSButton) {
@@ -91,6 +96,9 @@ class ViewController: NSViewController {
             reapplyEnabled.isEnabled = true
             userCheckButton.isEnabled = true
             UpdateInventoryButton.isEnabled = true
+            sendBlankPushButton.isEnabled = true
+            // Need to check API ability enableLostModeButton.isEnabled = true
+            deleteDeviceButton.isEnabled = true
         }
 
         else {
@@ -205,24 +213,52 @@ class ViewController: NSViewController {
             subStr = subStr.replacingOccurrences(of: "<id>", with: "", options: NSString.CompareOptions.literal, range: nil)
             let IDNumber = subStr.components(separatedBy: "<")[0]
             let UpdateInventoryCommandURL = jssURL.stringValue + devAPIUpdateInventoryPath + IDNumber
-            print(UpdateInventoryCommandURL)
+            // print(UpdateInventoryCommandURL)
             // JSSResource/mobiledevicecommands/command/UpdateInventory/id/13 -X POST
             let UpdateInventory = Just.post(UpdateInventoryCommandURL, auth: (jssUsername.stringValue, jssPassword.stringValue))
-            print (UpdateInventory.statusCode ?? 9999)
+            if (UpdateInventory.statusCode == 201) {
+                updateInventorySuccess.isHidden = false
+            }
+            else {
+                updateInventoryFail.isHidden = false
+            }
         }
-        
-        
+    }
+
+    @IBAction func sendBlanPushButtonPushed(_ sender: Any) {
+        let removeURL=jssURL.stringValue + devAPIMatchPath + deviceSN.stringValue
+        let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+        // Check for an authentication error.
+        if (deviceData.range(of: "authentication") != nil) {
+            invalidPassword.isHidden = false
+            deleteFailed.isHidden = false
+        }
+            // Check for returned number of items being equal to 1 device.
+        else if (deviceData.range(of: "<size>1") != nil) {
+            var subStr = deviceData[deviceData.characters.index(deviceData.startIndex, offsetBy: 83)...deviceData.characters.index(deviceData.startIndex, offsetBy: 100)]
+            subStr = subStr.replacingOccurrences(of: "<id>", with: "", options: NSString.CompareOptions.literal, range: nil)
+            let IDNumber = subStr.components(separatedBy: "<")[0]
+            let BlankPushCommandURL = jssURL.stringValue + devAPIBlankPushPath + IDNumber
+            // print(BlankPushCommandURL)
+            let BlankPush = Just.post(BlankPushCommandURL, auth: (jssUsername.stringValue, jssPassword.stringValue))
+            //print (BlankPush.statusCode ?? 9999)
+            if (BlankPush.statusCode == 201) {
+                
+            }
+            else {
+                
+            }
+        }
     }
 
     
+    @IBAction func EnableLostModeButtonPressed(_ sender: Any) {
+        disableLostModeButton.isEnabled = true
+    }
     
-    
-    
-    
-    
-    
-    
-    
+    @IBAction func disableLostModeButtonPressed(_ sender: Any) {
+        enableLostModeButton.isEnabled = true
+    }
     
     // Run this when clicking delete device button
     @IBAction func deleteDevice(_ sender: AnyObject) {
@@ -337,6 +373,8 @@ class ViewController: NSViewController {
         CheckURLButton.isHidden = true
         deleteFailed.isHidden = true
         deleteSuccess.isHidden = true
+        updateInventorySuccess.isHidden = true
+        updateInventoryFail.isHidden = true
         
     }
     
