@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Security
 
 
 class ViewController: NSViewController {
@@ -262,37 +263,45 @@ class ViewController: NSViewController {
     
     // Run this when clicking delete device button
     @IBAction func deleteDevice(_ sender: AnyObject) {
-        resetStatus()
-        let removeURL=jssURL.stringValue + devAPIMatchPath + deviceSN.stringValue
-        let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
-        // Check for an authentication error.
-        if (deviceData.range(of: "authentication") != nil) {
-            invalidPassword.isHidden = false
-            deleteFailed.isHidden = false
-        }
-        // Check for returned number of items being equal to 1 device.
-        else if (deviceData.range(of: "<size>1") != nil) {
-            var subStr = deviceData[deviceData.characters.index(deviceData.startIndex, offsetBy: 83)...deviceData.characters.index(deviceData.startIndex, offsetBy: 100)]
-            subStr = subStr.replacingOccurrences(of: "<id>", with: "", options: NSString.CompareOptions.literal, range: nil)
-            let IDNumber = subStr.components(separatedBy: "<")[0]
-            let deleteDevice = Just.delete(jssURL.stringValue + devAPIPath + IDNumber, auth: (jssUsername.stringValue, jssPassword.stringValue))
-            print (deleteDevice.statusCode!)
-            // Check the response code of the delete command.
-            if (deleteDevice.ok) {
-                deleteSuccess.isHidden = false
-                deleteDeviceButton.isEnabled = false
-            }
-            
-            else {
+
+        // Prompt the user to confirm before deleting device
+        let deleteConfirm = deleteDeviceDialog(question: "Are you sure you would like to delete this device? This can not be undone.", text: "Please select below")
+        
+        if deleteConfirm {
+            print("Delete the device")
+            resetStatus()
+            let removeURL=jssURL.stringValue + devAPIMatchPath + deviceSN.stringValue
+            let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
+            // Check for an authentication error.
+            if (deviceData.range(of: "authentication") != nil) {
+                invalidPassword.isHidden = false
                 deleteFailed.isHidden = false
-                otherError.isHidden = false
             }
-    }
-        //Catch all other errors getting device data.
-        else {
-            invalidGIDorSN.isHidden = false
+                // Check for returned number of items being equal to 1 device.
+            else if (deviceData.range(of: "<size>1") != nil) {
+                var subStr = deviceData[deviceData.characters.index(deviceData.startIndex, offsetBy: 83)...deviceData.characters.index(deviceData.startIndex, offsetBy: 100)]
+                subStr = subStr.replacingOccurrences(of: "<id>", with: "", options: NSString.CompareOptions.literal, range: nil)
+                let IDNumber = subStr.components(separatedBy: "<")[0]
+                let deleteDevice = Just.delete(jssURL.stringValue + devAPIPath + IDNumber, auth: (jssUsername.stringValue, jssPassword.stringValue))
+                print (deleteDevice.statusCode!)
+                // Check the response code of the delete command.
+                if (deleteDevice.ok) {
+                    deleteSuccess.isHidden = false
+                    deleteDeviceButton.isEnabled = false
+                }
+                else {
+                    deleteFailed.isHidden = false
+                    otherError.isHidden = false
+                }
+            }
+                //Catch all other errors getting device data.
+            else {
+                invalidGIDorSN.isHidden = false
             deleteFailed.isHidden = false
-        }
+            }
+            }
+        else {
+            }
     }
     
     @IBAction func FindUserInfo(_ sender: AnyObject) {
@@ -378,4 +387,13 @@ class ViewController: NSViewController {
         
     }
     
+    func deleteDeviceDialog(question: String, text: String) -> Bool {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = question
+        myPopup.informativeText = text
+        myPopup.alertStyle = NSAlertStyle.warning
+        myPopup.addButton(withTitle: "Cancel")
+        myPopup.addButton(withTitle: "OK")
+        return myPopup.runModal() == NSAlertFirstButtonReturn
+    }
 }
