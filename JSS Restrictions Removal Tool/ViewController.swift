@@ -77,6 +77,7 @@ class ViewController: NSViewController {
     let devAPISNPatch = "/JSSResource/mobiledevices/serialnumber/"
     let devAPIUpdateInventoryPath = "/JSSResource/mobiledevicecommands/command/UpdateInventory/id/"
     let devAPIBlankPushPath = "/JSSResource/mobiledevicecommands/command/BlankPush/id/"
+    let devAPIDelPath = "/JSSResource/mobiledevices/id/"
     
     // Run this function when clicking "Check" for JSS URL
     @IBAction func checkJSSURL(_ sender: NSButton) {
@@ -90,6 +91,7 @@ class ViewController: NSViewController {
         let testConn = Just.get(jssURL.stringValue, timeout:5.0)
        
         if (testConn.statusCode != nil) {
+            //print(testConn.statusCode!)
             resetStatus()
             jssConnectTBD.isHidden = true
             jssConnectYes.isHidden = false
@@ -266,9 +268,9 @@ class ViewController: NSViewController {
 
         // Prompt the user to confirm before deleting device
         let deleteConfirm = deleteDeviceDialog(question: "Are you sure you would like to delete this device? This can not be undone.", text: "Please select below")
-        
+        //print(deleteConfirm)
         if deleteConfirm {
-            print("Delete the device")
+            //print("Delete the device block")
             resetStatus()
             let removeURL=jssURL.stringValue + devAPIMatchPath + deviceSN.stringValue
             let deviceData = Just.get(removeURL, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
@@ -282,7 +284,9 @@ class ViewController: NSViewController {
                 var subStr = deviceData[deviceData.characters.index(deviceData.startIndex, offsetBy: 83)...deviceData.characters.index(deviceData.startIndex, offsetBy: 100)]
                 subStr = subStr.replacingOccurrences(of: "<id>", with: "", options: NSString.CompareOptions.literal, range: nil)
                 let IDNumber = subStr.components(separatedBy: "<")[0]
-                let deleteDevice = Just.delete(jssURL.stringValue + devAPIPath + IDNumber, auth: (jssUsername.stringValue, jssPassword.stringValue))
+                //print("Device to delete is ID number \(IDNumber)")
+                //print(jssURL.stringValue + devAPIDelPath + IDNumber)
+                let deleteDevice = Just.delete(jssURL.stringValue + devAPIDelPath + IDNumber, auth: (jssUsername.stringValue, jssPassword.stringValue))
                 print (deleteDevice.statusCode!)
                 // Check the response code of the delete command.
                 if (deleteDevice.ok) {
@@ -297,15 +301,20 @@ class ViewController: NSViewController {
                 //Catch all other errors getting device data.
             else {
                 invalidGIDorSN.isHidden = false
-            deleteFailed.isHidden = false
+                deleteFailed.isHidden = false
             }
             }
         else {
+            // User clicked cancel to delete device request
             }
     }
     
     @IBAction func FindUserInfo(_ sender: AnyObject) {
         resetStatus()
+        if userNameToCheck.stringValue.isEmpty {
+            blankUserDialog(question: "Please enter a username to search for a device by user. Otherwise, enter the device Serial Number you would like to perform an action.", text:"Click OK to continue")
+        }
+        else {
         let userData = Just.get(jssURL.stringValue + devAPIMatchPath + userNameToCheck.stringValue, auth: (jssUsername.stringValue, jssPassword.stringValue)).text! as String
         if (userData.range(of: "authentication") != nil) {
             invalidPassword.isHidden = false
@@ -353,6 +362,7 @@ class ViewController: NSViewController {
             }
         }
         
+        }
     }
     // Run this function when clicking "Save Settings"
     @IBAction func saveSettings(_ sender: AnyObject) {
@@ -392,8 +402,17 @@ class ViewController: NSViewController {
         myPopup.messageText = question
         myPopup.informativeText = text
         myPopup.alertStyle = NSAlertStyle.warning
-        myPopup.addButton(withTitle: "Cancel")
         myPopup.addButton(withTitle: "OK")
+        myPopup.addButton(withTitle: "Cancel")
         return myPopup.runModal() == NSAlertFirstButtonReturn
+    }
+    
+    func blankUserDialog(question: String, text: String) -> Void {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = question
+        myPopup.informativeText = text
+        myPopup.alertStyle = NSAlertStyle.warning
+        myPopup.addButton(withTitle: "OK")
+        myPopup.runModal()
     }
 }
