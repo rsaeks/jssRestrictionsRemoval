@@ -291,7 +291,6 @@ class ViewController: NSViewController {
                 // Check the response code of the delete command.
                 if (deleteDevice.ok) {
                     deleteSuccess.isHidden = false
-                    deleteDeviceButton.isEnabled = false
                 }
                 else {
                     deleteFailed.isHidden = false
@@ -394,7 +393,6 @@ class ViewController: NSViewController {
         deleteSuccess.isHidden = true
         updateInventorySuccess.isHidden = true
         updateInventoryFail.isHidden = true
-        
     }
     
     func deleteDeviceDialog(question: String, text: String) -> Bool {
