@@ -260,7 +260,7 @@
 				DEVELOPMENT_TEAM = L3CMP2L959;
 				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsaeks.JRRT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -278,7 +278,7 @@
 				DEVELOPMENT_TEAM = L3CMP2L959;
 				INFOPLIST_FILE = "JSS Restrictions Removal Tool/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsaeks.JRRT;
 				PRODUCT_NAME = "$(TARGET_NAME)";

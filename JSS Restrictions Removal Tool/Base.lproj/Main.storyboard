@@ -1414,6 +1414,8 @@ Finally, enter in your password and the device Serial Number to troubleshoot. Yo
                         <outlet property="removeSuccess" destination="hB0-M0-Pm0" id="4Lo-pw-Kcz"/>
                         <outlet property="removeUnknown" destination="E65-RO-0pF" id="v8F-ho-J5U"/>
                         <outlet property="sendBlankPushButton" destination="L0u-1I-6Oj" id="gM6-vo-HfI"/>
+                        <outlet property="sendBlankPushFail" destination="Fod-gm-KxO" id="zuA-zy-Iia"/>
+                        <outlet property="sendBlankPushSuccess" destination="Ofj-Ol-Nj9" id="N0k-Zp-gCL"/>
                         <outlet property="unableToConnectJSS" destination="TcN-CW-0KO" id="S6L-VD-waI"/>
                         <outlet property="updateInventoryFail" destination="Azm-K7-Wfu" id="8Df-5p-OJL"/>
                         <outlet property="updateInventorySuccess" destination="WX3-5I-Jdi" id="9Kb-7J-poH"/>

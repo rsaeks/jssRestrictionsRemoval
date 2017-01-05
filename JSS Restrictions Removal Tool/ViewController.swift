@@ -20,7 +20,7 @@ class ViewController: NSViewController {
         if (kJSSURLCheck != nil) {
             jssURL.stringValue = UserDefaults.standard.object(forKey: "kJSSURL") as! String
         }
-
+        
         let kexclusionGIDCheck = UserDefaults.standard.object(forKey: "kJSSURL")
         if (kexclusionGIDCheck != nil) {
             exclusionGID.stringValue = UserDefaults.standard.object(forKey: "kexclusionGID") as! String
@@ -30,8 +30,8 @@ class ViewController: NSViewController {
         if (kJSSUsernameCheck != nil) {
             jssUsername.stringValue = UserDefaults.standard.object(forKey: "kJSSUsername") as! String
         }
-        
     }
+    
     // Connections to our Main.storyboard are defined below
     @IBOutlet weak var jssURL: NSTextField!
     @IBOutlet weak var exclusionGID: NSTextField!
@@ -70,7 +70,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var disableLostModeButton: NSButton!
     @IBOutlet weak var updateInventoryFail: NSImageView!
     @IBOutlet weak var updateInventorySuccess: NSImageView!
-    
+    @IBOutlet weak var sendBlankPushFail: NSImageView!
+    @IBOutlet weak var sendBlankPushSuccess: NSImageView!
     // Globals for API Paths
     let devAPIPath = "/JSSResource/mobiledevicegroups/id/"
     let devAPIMatchPath = "/JSSResource/mobiledevices/match/"
@@ -100,8 +101,9 @@ class ViewController: NSViewController {
             userCheckButton.isEnabled = true
             UpdateInventoryButton.isEnabled = true
             sendBlankPushButton.isEnabled = true
-            // Need to check API ability enableLostModeButton.isEnabled = true
+            //enableLostModeButton.isEnabled = true
             deleteDeviceButton.isEnabled = true
+            
         }
 
         else {
@@ -113,8 +115,8 @@ class ViewController: NSViewController {
             reapplyEnabled.isEnabled = false
             CheckURLButton.isHidden = false
         }
-        
     }
+    
     @IBAction func openJSSURLInBrowser(_ sender: AnyObject) {
         let baseURL = URL(string: jssURL.stringValue)
         NSWorkspace.shared().open(baseURL!)
@@ -135,16 +137,16 @@ class ViewController: NSViewController {
             jssConnectYes.isHidden = false
             removeSuccess.isHidden = false
             deleteDeviceButton.isEnabled = true
-            
         }
+        
         // Unauthorized PUT result
         else if (addCommandXMLStatus.statusCode == 401) {
             resetStatus()
             jssConnectYes.isHidden = false
             removeFail.isHidden = false
             invalidPassword.isHidden = false
-
         }
+            
         // Not found PUT result
         else if (addCommandXMLStatus.statusCode == 404 || addCommandXMLStatus.statusCode == 409) {
             resetStatus()
@@ -152,6 +154,7 @@ class ViewController: NSViewController {
             removeFail.isHidden = false
             invalidGIDorSN.isHidden = false
         }
+            
         // Other PUT errors
         else {
             resetStatus()
@@ -175,8 +178,8 @@ class ViewController: NSViewController {
             resetStatus()
             jssConnectYes.isHidden = false
             reapplySuccess.isHidden = false
-            
         }
+            
         // Unauthorized PUT result
         else if (removeCommandXMLStatus.statusCode == 401) {
             resetStatus()
@@ -184,6 +187,7 @@ class ViewController: NSViewController {
             reapplyFail.isHidden = false
             invalidPassword.isHidden = false
         }
+            
         // Not found PUT result
         else if (removeCommandXMLStatus.statusCode == 404 || removeCommandXMLStatus.statusCode == 409) {
             resetStatus()
@@ -191,6 +195,7 @@ class ViewController: NSViewController {
             reapplyFail.isHidden = false
             invalidGIDorSN.isHidden = false
         }
+            
         // Other PUT errors
         else {
             resetStatus()
@@ -198,7 +203,6 @@ class ViewController: NSViewController {
             reapplyFail.isHidden = false
             otherError.isHidden = false
         }
-
     }
 
     // Run this function when clicking Update Inventory
@@ -219,12 +223,8 @@ class ViewController: NSViewController {
             // print(UpdateInventoryCommandURL)
             // JSSResource/mobiledevicecommands/command/UpdateInventory/id/13 -X POST
             let UpdateInventory = Just.post(UpdateInventoryCommandURL, auth: (jssUsername.stringValue, jssPassword.stringValue))
-            if (UpdateInventory.statusCode == 201) {
-                updateInventorySuccess.isHidden = false
-            }
-            else {
-                updateInventoryFail.isHidden = false
-            }
+            if (UpdateInventory.statusCode == 201) {updateInventorySuccess.isHidden = false}
+            else { updateInventoryFail.isHidden = false }
         }
     }
 
@@ -246,10 +246,10 @@ class ViewController: NSViewController {
             let BlankPush = Just.post(BlankPushCommandURL, auth: (jssUsername.stringValue, jssPassword.stringValue))
             //print (BlankPush.statusCode ?? 9999)
             if (BlankPush.statusCode == 201) {
-                
+                sendBlankPushSuccess.isHidden = false
             }
             else {
-                
+                sendBlankPushFail.isHidden = false
             }
         }
     }
@@ -360,7 +360,6 @@ class ViewController: NSViewController {
                 }
             }
         }
-        
         }
     }
     // Run this function when clicking "Save Settings"
@@ -393,6 +392,8 @@ class ViewController: NSViewController {
         deleteSuccess.isHidden = true
         updateInventorySuccess.isHidden = true
         updateInventoryFail.isHidden = true
+        sendBlankPushSuccess.isHidden = true
+        sendBlankPushFail.isHidden = true
     }
     
     func deleteDeviceDialog(question: String, text: String) -> Bool {
